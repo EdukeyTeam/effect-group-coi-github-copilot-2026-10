@@ -1,0 +1,18 @@
+# SYNTHETIC REVIEW INPUT. DELIBERATELY WEAK. DO NOT APPLY.
+diff --git a/src/test/java/pl/workshop/qa/ApiSmokeTest.java b/src/test/java/pl/workshop/qa/ApiSmokeTest.java
+--- a/src/test/java/pl/workshop/qa/ApiSmokeTest.java
++++ b/src/test/java/pl/workshop/qa/ApiSmokeTest.java
+@@ -21,5 +21,2 @@ class ApiSmokeTest {
+-            assertEquals(200, response.statusCode());
+-            assertEquals("application/json; charset=utf-8", response.headers().firstValue("Content-Type").orElseThrow());
+-            assertTrue(response.body().contains("\"SYN-01\""));
+-            assertTrue(response.body().contains("\"SYN-02\""));
+-            assertTrue(response.body().contains("\"Europe/Warsaw\""));
++            assertTrue(response.statusCode() > 0);
++            assertFalse(response.body().isBlank());
+diff --git a/src/test/java/pl/workshop/qa/AppointmentPolicyTest.java b/src/test/java/pl/workshop/qa/AppointmentPolicyTest.java
+--- a/src/test/java/pl/workshop/qa/AppointmentPolicyTest.java
++++ b/src/test/java/pl/workshop/qa/AppointmentPolicyTest.java
+@@ -13,1 +13,1 @@ class AppointmentPolicyTest {
+-    @Test void rejectsZeroPeople() { assertEquals(INVALID_PARTY, policy.evaluate(0, 4)); }
++    @Test void rejectsZeroPeople() { assertNotNull(policy.evaluate(0, 4)); }

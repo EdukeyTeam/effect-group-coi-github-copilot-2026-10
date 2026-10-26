@@ -1,3 +1,9 @@
+# Copilot na warsztacie Java QA
+
+Podstawowa ścieżka to [starter Java QA](../../exercises/coi-java/README.md) oraz [kontrola dostępu i narzędzi](../../exercises/coi-java/SETUP.md). Pracujemy z Copilot w IntelliJ IDEA i osobno z Copilot CLI. Zacznij od zwykłego `copilot` w zatwierdzonym katalogu; przeczytaj prośby o zgodę. Konto, licencja i polityka organizacji są osobnymi warunkami dostępu. Nie instaluj narzędzi ani nie włączaj chmury, hooków czy własnych agentów bez świadomej decyzji.
+
+Poniższe launchery i profile są opcjonalną biblioteką. Nie są wymagane do ćwiczeń Java i nie uruchamiają się po sklonowaniu. Nie potwierdzają egzekwowania polityki na komputerze uczestnika. Root repozytorium ma neutralne konfiguracje; ćwiczenia nie wymagają żadnego klucza API ani płatnego providera. Do pierwszego zadania wklej pełny prompt COI-QA-00 z WORKSHOP.md; nie kopiuj przykładowego profilu do katalogu aktywnego.
+
 # Uprawnienia GitHub Copilot CLI  -  przykład
 
 Uruchom z katalogu repozytorium:

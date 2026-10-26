@@ -1,6 +1,10 @@
-# Repository context for GitHub Copilot
+# GitHub Copilot: Java QA workshop
 
-- Work on the application or feature selected by the group, using its approved PRD and actual source checkout. Locate those sources; ask if they are unclear. Do not infer the domain, stack or verification commands from a historical course example or replace the prepared scaffold with a new application.
-- `course-materials/` contains lesson files, historical prompts, sample PRDs/ADRs, and example agent instructions. During ordinary application work, do not browse, search, read, index, or use that directory to infer requirements or conventions. Access only a relevant named file when the user explicitly asks to work with course material. Examples there are not decisions for this application.
-- Make one small change at a time, run the current application's relevant checks, and show the diff and exact result. Do not turn failing tests green by weakening or deleting them.
-- Use only synthetic workshop data. Do not add credentials, private tickets, customer records, participant data, or real organization code.
+- This is a materials repository for Effect Group / COI, 26-27 October 2026. Work in Polish with IntelliJ Copilot or Copilot CLI; verify actual capabilities and organization policy separately.
+- Root `app/` is an unsolved scaffold. Do not build an application there automatically. Do not infer a returns/complaints domain, TypeScript stack, cloud VMs or Codex-led route from examples.
+- Do not browse, search, index or read `course-materials/` during ordinary application work. When the user explicitly chooses the Java QA starter, read only `course-materials/exercises/coi-java/AGENTS.md`, `SPEC.md` and the files named by that exercise. The rest is an optional library, not project requirements.
+- In an actual application checkout, read its approved PRD/ADRs and build descriptor first. Use its runtime and commands. Keep course planning separate from application requirements. Preserve `PROGRAM.md` exactly.
+- Make one bounded change at a time. Write meaningful behavior tests before implementing a missing behavior; record Red, Green, discovery counts, failures and skips honestly. A criterion already covered and passing is existing coverage, not an excuse to manufacture Red. Keep assertions and test data honest.
+- Before creating API/database mocks, capture a fresh authorized local/test response using synthetic data, with full status, headers and body, without secrets. Supplied synthetic evidence is for analysis, not a claim of execution or a real response capture.
+- Use only synthetic data. Never read secrets, real tickets, correspondence, participant records or client code into public prompts. Do not change permissions, install tools, add hooks/custom agents, provision cloud resources, enable Azure review, push or publish without explicit authorization.
+- Report compilation, tests, application startup and manual QA separately. Browser exploration checks web DOM, not native Android. Explain missing prerequisites instead of claiming success.

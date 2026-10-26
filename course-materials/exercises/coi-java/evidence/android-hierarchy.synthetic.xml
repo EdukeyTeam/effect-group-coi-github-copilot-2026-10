@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- SYNTHETIC NATIVE UI TREE. No device or actual APK capture. -->
+<hierarchy rotation="0">
+  <android.widget.FrameLayout package="pl.synthetic.visits" class="android.widget.FrameLayout">
+    <android.widget.EditText resource-id="pl.synthetic.visits:id/party_size" content-desc="Liczba osób" text="1" enabled="true" />
+    <android.widget.Button resource-id="pl.synthetic.visits:id/reserve" content-desc="Zarezerwuj wizytę" text="Zarezerwuj" enabled="true" />
+    <android.widget.TextView resource-id="pl.synthetic.visits:id/result" text="Brak wolnych miejsc" enabled="true" />
+  </android.widget.FrameLayout>
+</hierarchy>

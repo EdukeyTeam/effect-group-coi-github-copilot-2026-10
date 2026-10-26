@@ -114,6 +114,12 @@
       "Bash(git push * --force*)",
       "Bash(git push * -f)",
       "Bash(git push * -f *)",
+      // These rules block direct gh deletion and any command mentioning delete_repo.
+      // They do not prevent deletion via every API, wrapper or other credential.
+      "Bash(gh repo delete:*)",
+      "Bash(gh auth refresh *delete_repo*)",
+      "Bash(gh auth login *delete_repo*)",
+      "Bash(*delete_repo*)",
       "Bash(git reset --hard:*)",
       "Bash(chmod:*)",
       "Bash(chown:*)",

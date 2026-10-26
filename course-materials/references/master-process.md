@@ -2,7 +2,7 @@
 
 > Kręgosłup kursu. Każdy moduł agendy mapuje się na jeden krok. Pokazać na
 > starcie Dnia 1 i odświeżać każdego ranka. Agenda:
-> `AGENDA.md`.
+> `PROGRAM.md`.
 
 ## Zasady nadrzędne
 

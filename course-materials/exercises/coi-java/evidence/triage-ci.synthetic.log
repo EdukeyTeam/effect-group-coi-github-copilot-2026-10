@@ -1,0 +1,22 @@
+SYNTHETIC TRAINING LOG. Three separate scenarios, not one real pipeline.
+SCENARIO ENV-01
+  command: mvn test
+  dependency resolution: Could not transfer org.junit.jupiter:junit-jupiter:5.13.4
+  reason: repository access denied by synthetic network policy
+  test discovery: NOT STARTED
+  tests executed: NONE; do not report "0 passed" as successful verification
+SCENARIO API-02 (a learner-added acceptance test; not in baseline)
+  command: mvn -Dtest=ReservationWriteTest test
+  local fixture startup: http://127.0.0.1:<ephemeral>/
+  POST /api/reservations, Content-Type: application/x-www-form-urlencoded
+  request: slotId=SYN-01&partySize=1
+  expected status: 201
+  actual status: 501
+  response body: {"error":"NOT_IMPLEMENTED"}
+  tests run: 1, failures: 1, errors: 0, skipped: 0
+SCENARIO DRIVER-03
+  command: mvn -Pselenium -Dtest=SlotsBrowserTest test
+  supplied browser path: missing
+  error: Podaj -Dworkshop.chrome i -Dworkshop.chromedriver; brak automatycznego pobierania.
+  browser session: NOT CREATED
+  this is not evidence that the application failed

@@ -1,34 +1,35 @@
-# COURSE-NAME (COURSE-ORGANIZER)
+# Agenci AI dla testerów automatycznych - GitHub Copilot
 
-**Materiały szkoleniowe: [devpowers.com/szkolenia/COURSE-SITE](https://devpowers.com/szkolenia/COURSE-SITE/)**
+**Effect Group / COI, 26-27.10.2026, online, 09:00-16:00 Europe/Warsaw.**
 
-- [Agenda i wszystkie materiały](https://devpowers.com/szkolenia/COURSE-SITE/agenda.html)
-- [Slajdy](https://devpowers.com/szkolenia/COURSE-SITE/agenda.html#prezentacje)
-- [Biblioteka promptów](https://devpowers.com/szkolenia/COURSE-SITE/prompty.html) · [Ćwiczenia](https://devpowers.com/szkolenia/COURSE-SITE/cwiczenia.html) · [Checklisty](https://devpowers.com/szkolenia/COURSE-SITE/checklisty.html) · [Słownik AI](https://devpowers.com/szkolenia/COURSE-SITE/slownik-ai.html)
-- [Wyniki ankiety przed szkoleniem](https://devpowers.com/szkolenia/COURSE-SITE/raport-przed.html) · [Odpowiedzi na pytania z kursu](https://devpowers.com/szkolenia/COURSE-SITE/pytania.html) (uzupełniamy po każdym dniu)
+[Materiały, slajdy i prompty](https://devpowers.com/szkolenia/effect-group/coi-github-copilot-2026-10/) | [Dokładny program](PROGRAM.md) | [Start ćwiczeń Java QA](course-materials/exercises/coi-java/README.md) | [Android: możliwości i granice](course-materials/Research/android-testing-options-2026-10.md)
 
-Aktualny [program szkolenia](AGENDA.md).
+Pracujemy z GitHub Copilot w IntelliJ IDEA oraz Copilot CLI, przede wszystkim nad testami Java/Selenium. Pierwszego dnia sprawdzamy dostęp, kontekst repozytorium i zgody, projektujemy scenariusze, uruchamiamy testy zachowania oraz diagnozujemy Selenium i API. Drugiego dnia porównujemy Selenium z Playwright, badamy aplikację przez przeglądarkę, omawiamy Android oraz review, triage CI i integracje on-prem. Kolejność i tempo dopasowujemy do pytań grupy.
 
-Repozytorium uczestnika szkolenia COURSE-ORGANIZER (COURSE-DATES, online, 09:00-16:00). W czasie szkolenia (COURSE-DURATION) przechodzimy pełny cykl wytwarzania oprogramowania z agentami AI: od pomysłu i wymagań (PRD), przez decyzje architektoniczne (ADR), plan, implementację i testy, po code review, bezpieczeństwo i CI/CD.
+## Zacznij tutaj
 
-Głównym agentem warsztatu jest **OpenAI Codex CLI**, a te same koncepcje pokazujemy także w **Claude Code** i **GitHub Copilot**. Możesz pracować w swoim stosie (np. C# / .NET, Java, Python); przykład prowadzącego powstaje w TypeScript.
+1. Otwórz repozytorium na swoim komputerze COI. Sprawdź zgodę organizacji na użycie agenta i przekazywany kontekst. Używamy wyłącznie danych syntetycznych.
+2. Sprawdź logowanie i dostęp do Copilot osobno w IntelliJ oraz CLI. Członkostwo w zespole GitHub nie przyznaje licencji Copilot. Konta, zaproszenia i licencje obsługuje prowadzący; ustawienia organizacji mogą ograniczać funkcje.
+3. Przeczytaj [start i kontrolę narzędzi](course-materials/exercises/coi-java/SETUP.md). Nie instaluj niczego z uprawnieniami administratora ani nie zmieniaj zabezpieczeń komputera. Gdy brakuje narzędzi, wybierz dostarczoną ścieżkę analizy plików.
+4. Świadomie wybierz [opcjonalny starter Java QA](course-materials/exercises/coi-java/README.md). Nie wymaga on zbudowania całej aplikacji przed testowaniem. `app/` w katalogu głównym pozostaje pustym szkieletem.
 
-Głównym projektem grupy jest aplikacja do obsługi zwrotów i reklamacji elektroniki, rozwijana według PRD uzgodnionego podczas zajęć. Możesz też pracować nad własnym pomysłem, stosując ten sam proces. Po PRD omów architekturę i biblioteki, zapisz decyzje w ADR, ułóż plan i zależności zadań, a potem implementuj, testuj i przeglądaj zmiany przed utworzeniem PR. Przykładowy prompt PRD w `course-materials/` nie zastępuje dokumentu poprawionego z grupą.
+Starter to mały, celowo niekompletny model rezerwacji wizyt z syntetycznymi danymi. Nie przedstawia systemu COI. Zawiera testy JUnit i lokalnego API, opcjonalne Selenium/REST Assured oraz jawne zadania do wykonania. [Specyfikacja i pokrycie](course-materials/exercises/coi-java/SPEC.md) oddzielają działającą bazę od brakującego zachowania. Każde [ćwiczenie](course-materials/exercises/coi-java/WORKSHOP.md) podaje pliki, polecenie, pełny prompt, czas i wariant bez instalacji lub kredytów.
+
+## Jak korzystać z agentów
+
+Agent czyta instrukcje w rzeczywistym katalogu pracy. [Instrukcje Copilot](.github/copilot-instructions.md) i [reguły repozytorium](AGENTS.md) określają granice; obsługę formatów w IntelliJ i CLI sprawdź osobno. [Copilot: uruchomienie i zgody](course-materials/agent-configs/copilot/README.md) zawiera opcjonalne przykłady. Skopiowanie repozytorium nie włącza własnych agentów, hooków, profili modeli ani MCP. Nieaktywny workflow review Azure nie jest weryfikacją tego kursu i nie wolno go włączać.
+
+Przed zmianą kodu ustal kryterium, potem uruchom test. Już działające zachowanie zapisuj jako istniejące pokrycie. Dla brakującego zachowania pokaż uczciwe Red -> Green -> Refactor. Nie osłabiaj asercji, nie pomijaj testów i nie dodawaj retry, aby uzyskać zielony raport. Oddziel wyniki kompilacji, testów, startu aplikacji i ręcznej kontroli. [Szablon raportu](course-materials/exercises/coi-java/REPORT-TEMPLATE.md) pomaga zebrać dowody.
 
 ## Biblioteka dodatkowa
 
-`course-materials/` zawiera szeroką bibliotekę pełnych promptów, danych syntetycznych, checklist, przykładów konfiguracji i materiałów o innych agentach. To zasób do późniejszego czytania, nie lista narzędzi wymaganych na warsztacie. [Pełne prompty historyczne](course-materials/Prompt%20examples/) zachowano bez skracania; starsze twierdzenia o produktach, licencjach i komendach wymagają ponownego sprawdzenia. Podczas pracy z wybraną aplikacją agent nie powinien sam przeszukiwać `course-materials/`: zawarte tam PRD, ADR i instrukcje są przykładami, a nie wymaganiami tego projektu. Otwórz konkretny materiał dopiero wtedy, gdy go o to poprosisz.
+Pełna biblioteka `course-materials/` pozostaje dostępna do samodzielnego wyboru. Agent nie powinien jej przeszukiwać podczas pracy nad aplikacją bez Twojego polecenia. Przykładowe PRD, ADR i konfiguracje nie ustalają wymagań projektu. Dla własnej aplikacji użyj jej źródeł, specyfikacji, stosu i poleceń.
 
-W bibliotece znajdują się również **archiwalne materiały z wcześniejszego kursu o Claude Code**: [agenda](course-materials/course-agenda.md), [notatki](course-materials/Course%20Notes%20-%20AI%20in%20Programming.md), [quiz](course-materials/quizzes/day-1-anonymous-ai-basics-quiz.md), [przykłady konfiguracji](course-materials/agent-configs/claude/) i [słownik PDF](course-materials/AI%20dla%20Programist%C3%B3w%20-%20S%C5%82ownik%20przed%20szkoleniem.pdf). Zachowano je jako źródła do ponownego wykorzystania, **nie jako aktualną agendę ani konfigurację tego warsztatu**. Przykłady ustawień i skrypty należy dostosować i sprawdzić przed użyciem. `course-materials/exercise-data/hidden-patterns.md` jest archiwalnym kluczem trenerskim do danych syntetycznych.
+- [Pełne prompty](course-materials/Prompt%20examples/) oraz [dane syntetyczne](course-materials/exercise-data/).
+- [Konfiguracje narzędzi](course-materials/agent-configs/), [hooki i zgody](course-materials/hooks-example/), [Context7](course-materials/hooks-example/context7/).
+- [CI i code review](course-materials/cicd-headless/), [agent review](course-materials/cicd-headless/agent-review/), [PR-Agent i Qodo](course-materials/cicd-headless/PR-Agent-Qodo/).
+- [Stan narzędzi i źródła](docs/tool-facts.md). Materiały porównawcze o Codex i Claude Code są opcjonalne; nie wymagają dodatkowych subskrypcji uczestnika.
 
-Warto zacząć od: [promptu PRD](course-materials/Prompt%20examples/PRD-electronics-returns-complains-app.md) i [promptu ADR](course-materials/Prompt%20examples/ADR-generation-typescript-vercel-ai-sdk.md) z linkami do bibliotek (Chat SDK, OpenRouter Responses API, Vercel AI SDK), [jednego skryptu blokującego odczyt `.env`, kluczy SSH i `secrets/`](course-materials/hooks-example/) w Copilocie, Claude Code i Codex, oraz [agenta code review w CI/CD](course-materials/cicd-headless/agent-review/) - Azure Pipelines, GitLab CI, Bitbucket Pipelines, Jenkins i GitHub Actions, z wynikiem w komentarzu PR i zadaniu w Jira.
+Nie zakładamy gotowego CI, dostępu do Jira/Bitbucket ani urządzenia Android. Ćwiczenia mają wariant plikowy. Przykłady integracji są nieaktywne; nie wpisuj prawdziwych endpointów ani tokenów. Klucze odpowiedzi prowadzącego nie należą do tego repozytorium.
 
-Skróty Codexa dla Bash i PowerShell znajdziesz w [przykładach profili](course-materials/agent-configs/README.md#codex-profiles). [Przykłady hooków](course-materials/hooks-example/) obejmują blokadę plików z sekretami oraz opcjonalne kontrole poleceń, treści zapisu, Javy i kontekstu sesji. Wybierz potrzebne wpisy i scal je z własną konfiguracją zgodnie z instrukcją.
-
-## Granice
-
-Używaj wyłącznie danych syntetycznych. Przed przekazaniem kontekstu agentowi sprawdź politykę organizacji i zakres dostępu. Przejrzyj każdy diff, wynik testów i uprawnienia proponowanych narzędzi. Testów nie zmieniaj po to, by ukryć nieukończone zachowanie.
-
-Możliwość użycia agenta chmurowego, MCP, CLI i pul AI Credits zależy od planu oraz ustawień organizacji. Agent w IDE i agent chmurowy to osobne środowiska. Funkcje edytora mogą się różnić od CLI i od innych IDE. [Stan narzędzi i źródła](docs/tool-facts.md) wymagają ponownego sprawdzenia przed zajęciami.
-
-Trener: Łukasz Matuszewski · [LinkedIn](https://www.linkedin.com/in/lukaszmatuszewski/) · [X](https://x.com/mrLumatic)
+Trener: Łukasz Matuszewski | [LinkedIn](https://www.linkedin.com/in/lukaszmatuszewski/) | [X](https://x.com/mrLumatic)

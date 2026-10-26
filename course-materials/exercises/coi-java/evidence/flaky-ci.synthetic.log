@@ -1,0 +1,16 @@
+SYNTHETIC TRAINING LOG. Not an actual run. No CI vendor is implied.
+scenario=COI-QA-03 artifact=BrittleSlotTest.java.txt browser/version=not-recorded
+Attempt A, synthetic timestamp 2026-10-26T10:15:00+01:00
+  t+000 ms navigation to loopback fixture accepted
+  t+080 ms document contains #load-status text="Wczytywanie"; #slots empty
+  t+100 ms Thread.sleep(100) ended
+  t+105 ms NoSuchElementException: #slots li:nth-child(1) button
+  t+310 ms synthetic network timeline: GET /api/slots completed 200
+  Artifact: no screenshot at failure; later DOM is supplied separately
+Attempt B, independent synthetic fixture
+  t+030 ms GET /api/slots completed 200
+  t+100 ms first slot selected; #selected-slot="SYN-01"
+  t+110 ms NoSuchElementException: //button[text()='Rezerwuj']
+  DOM evidence button id="reserve" text="Zarezerwuj"
+Neither attempt establishes a success path for POST /api/reservations.
+Question: what evidence would distinguish timing from a selector that never matches?

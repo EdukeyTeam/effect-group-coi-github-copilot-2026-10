@@ -1,6 +1,6 @@
 # Agent config examples
 
-Example configurations for the agents used in the course. The repository root holds project settings (filesystem/network permissions, MCP servers) and curated command rules. Provider profiles and sub-agents live here: copy the ones you need and adapt them. Writing your own sub-agent from one of these is a course exercise.
+Warsztat COI korzysta przede wszystkim z [Copilot](copilot/README.md) i [startera Java QA](../exercises/coi-java/README.md). Poniższa biblioteka jest opcjonalna. Root konfiguracje nie uruchamiają MCP, hooków, providerów ani własnych agentów; zachowują defensywne reguły uprawnień. Nie kopiuj ustawień do katalogów aktywnych ani profilu użytkownika bez świadomego wyboru, sprawdzenia wersji i zgody na dany zakres. Przykłady Codex, Claude Code i OpenCode nie są warunkiem ćwiczeń.
 
 Each folder has the shape of that tool's own config folder.
 
@@ -46,6 +46,54 @@ Participants may push their own branches and open PRs. The examples deny the cov
 | OpenCode | [opencode.jsonc](opencode/opencode.jsonc) | `permission.bash` entries `"git push * main": "deny"` / `"git push * main *": "deny"` and `"git push *:main": "deny"` / `"git push *:main *": "deny"`, repeated for `master`/`prod` | `"git push --force*": "deny"`, standalone `-f` patterns and later-position force globs | Bare protected-branch push only asks; aliases, wrappers, full refs, global options and `+` force refspecs can escape the globs |
 
 GitHub/Bitbucket branch protection is the real guard for protected branches and force pushes; the headless review agent retains its blanket push denial.
+
+## GitHub repository deletion
+
+The root Claude settings and the Claude examples deny direct `gh repo delete`
+calls and commands mentioning `delete_repo`. The root Codex policy and its
+example deny `gh repo delete` (including `gh.exe`) and request approval for
+`gh auth login` and `gh auth refresh`. A Codex approval prompt is not a ban on
+granting a scope. The inactive parity example uses the same deletion rules.
+
+These patterns cover direct CLI calls, not every API call, wrapper or credential.
+Do not grant repository-deletion privileges to course agents. Inspect token
+permissions and repository roles separately; classic OAuth `delete_repo` is not
+the only possible way to authorize deletion. See the [GitHub CLI deletion
+reference](https://cli.github.com/manual/gh_repo_delete) and [Claude permission
+precedence](https://code.claude.com/docs/en/permissions).
+
+## Copilot CLI editor
+
+Set `COPILOT_EDITOR` alongside `EDITOR` and `VISUAL`, so the CLI and other tools
+use the same editor. With VS Code installed and its `code` command in `PATH`,
+`--wait` keeps the calling process waiting until the file is closed.
+
+Bash, for the current shell:
+
+```bash
+export EDITOR='code --wait'
+export VISUAL="$EDITOR"
+export COPILOT_EDITOR="$EDITOR"
+```
+
+PowerShell, for the current shell:
+
+```powershell
+$env:EDITOR = 'code --wait'
+$env:VISUAL = $env:EDITOR
+$env:COPILOT_EDITOR = $env:EDITOR
+```
+
+Check `copilot --version` and `copilot help environment` before teaching the
+example. CLI 1.0.89 lists precedence as `COPILOT_EDITOR`, `VISUAL`, `EDITOR`,
+while the online reference checked on 2026-10-26 lists a different order.
+Setting all three identically avoids relying on that discrepancy. Verify the
+real edit-and-return flow on the course VM; shell assignments do not prove
+editor integration. PowerShell and VS Code were not available in the audit
+environment, so that flow remains unverified there.
+
+Sources: [Copilot environment variables](https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference#environment-variables),
+[VS Code command line](https://code.visualstudio.com/docs/configure/command-line).
 
 ## Codex permissions
 
