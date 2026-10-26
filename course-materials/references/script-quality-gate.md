@@ -27,7 +27,7 @@ Use this checklist before marking any day script task as DONE.
 - Czy zachowany jest Claude Code-first, z Codex tylko jako krótką notą pozycjonującą?
 - Czy porównania Claude/IntelliJ są krótkie i rzeczowe?
 - Czy uniknięto tool sprawl (OpenCode/Goose/Cursor/Zed jako core)?
-- WAŻNE: czy jest zgodne z programem szkolenia z pliku `AGENDA.md` (agenda ofertowa w katalogu głównym repozytorium: `AGENDA.md` / `AGENDA.pdf`)?
+- WAŻNE: czy jest zgodne z programem szkolenia z pliku `PROGRAM.md` (agenda ofertowa w katalogu głównym repozytorium: `PROGRAM.md` / `PROGRAM.pdf`)?
 
 ## 6) Cloud vs on-prem realizm
 - Czy pokazano "max możliwości" (cloud) + "jak to adaptować on-prem"?

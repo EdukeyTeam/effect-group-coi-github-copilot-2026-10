@@ -213,6 +213,13 @@ Claude Code obsługuje filtr `if` na handlerze, np. `"if": "Bash(git *)"`; filtr
 
 Zdarzenia i argumenty mogą zmieniać się między wersjami. Przykłady dotyczą Codex CLI **0.162.1**; dokumentację hooków sprawdzono **2026-10-16**. Próby bez agenta potwierdzają działanie skryptu, a nie instalację, zaufanie ani zachowanie konkretnej wersji CLI. Przykłady nie są granicą bezpieczeństwa; zachowaj sandbox, uprawnienia i kontrole CI.
 
+## Context7: zgody na zapytania o dokumentację
+
+[Opcjonalny przykład Context7](context7/) pokazuje automatyczne zatwierdzanie
+samodzielnych poleceń `library` i `docs`, pytanie o inne wywołania `npx`
+oraz różnice między uprawnieniami i hookami. Zawiera testy bez pobierania
+pakietów. Samo sklonowanie repozytorium nie włącza tego przykładu.
+
 ## Dokumentacja
 
 - [Copilot: hooki](https://docs.github.com/en/copilot/concepts/agents/hooks) i [dokumentacja referencyjna](https://docs.github.com/en/copilot/reference/hooks-reference)
