@@ -1,15 +1,15 @@
-# COURSE-NAME (COURSE-ORGANIZER)
+# Agenci AI dla testerów automatycznych - GitHub Copilot (Effect Group)
 
-**Materiały szkoleniowe: [devpowers.com/szkolenia/COURSE-SITE](https://devpowers.com/szkolenia/COURSE-SITE/)**
+**Materiały szkoleniowe: [devpowers.com/szkolenia/effect-group/coi-github-copilot-2026-10](https://devpowers.com/szkolenia/effect-group/coi-github-copilot-2026-10/)**
 
-- [Program i wszystkie materiały](https://devpowers.com/szkolenia/COURSE-SITE/agenda.html)
-- [Slajdy](https://devpowers.com/szkolenia/COURSE-SITE/agenda.html#prezentacje)
-- [Biblioteka promptów](https://devpowers.com/szkolenia/COURSE-SITE/prompty.html) · [Ćwiczenia](https://devpowers.com/szkolenia/COURSE-SITE/cwiczenia.html) · [Checklisty](https://devpowers.com/szkolenia/COURSE-SITE/checklisty.html) · [Słownik AI](https://devpowers.com/szkolenia/COURSE-SITE/slownik-ai.html)
-- [Wyniki ankiety przed szkoleniem](https://devpowers.com/szkolenia/COURSE-SITE/raport-przed.html) · [Odpowiedzi na pytania z kursu](https://devpowers.com/szkolenia/COURSE-SITE/pytania.html) (uzupełniamy po każdym dniu)
+- [Program i wszystkie materiały](https://devpowers.com/szkolenia/effect-group/coi-github-copilot-2026-10/agenda.html)
+- [Slajdy](https://devpowers.com/szkolenia/effect-group/coi-github-copilot-2026-10/agenda.html#prezentacje)
+- [Biblioteka promptów](https://devpowers.com/szkolenia/effect-group/coi-github-copilot-2026-10/prompty.html) · [Ćwiczenia](https://devpowers.com/szkolenia/effect-group/coi-github-copilot-2026-10/cwiczenia.html) · [Checklisty](https://devpowers.com/szkolenia/effect-group/coi-github-copilot-2026-10/checklisty.html) · [Słownik AI](https://devpowers.com/szkolenia/effect-group/coi-github-copilot-2026-10/slownik-ai.html)
+- [Wyniki ankiety przed szkoleniem](https://devpowers.com/szkolenia/effect-group/coi-github-copilot-2026-10/raport-przed.html) · [Odpowiedzi na pytania z kursu](https://devpowers.com/szkolenia/effect-group/coi-github-copilot-2026-10/pytania.html) (uzupełniamy po każdym dniu)
 
 Aktualny [program szkolenia](PROGRAM.md).
 
-Repozytorium uczestnika szkolenia COURSE-ORGANIZER (COURSE-DATES, online, 09:00-16:00). W czasie szkolenia (COURSE-DURATION) przechodzimy pełny cykl wytwarzania oprogramowania z agentami AI: od pomysłu i wymagań (PRD), przez decyzje architektoniczne (ADR), plan, implementację i testy, po code review, bezpieczeństwo i CI/CD.
+Repozytorium uczestnika szkolenia Effect Group (26-27.10.2026, online, 09:00-16:00). W czasie szkolenia (2 dni) przechodzimy pełny cykl wytwarzania oprogramowania z agentami AI: od pomysłu i wymagań (PRD), przez decyzje architektoniczne (ADR), plan, implementację i testy, po code review, bezpieczeństwo i CI/CD.
 
 Głównym agentem warsztatu jest **OpenAI Codex CLI**, a te same koncepcje pokazujemy także w **Claude Code** i **GitHub Copilot**. Możesz pracować w swoim stosie (np. C# / .NET, Java, Python); przykład prowadzącego powstaje w TypeScript.
 
