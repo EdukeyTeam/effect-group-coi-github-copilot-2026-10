@@ -30,7 +30,7 @@ Instrukcje `.github/copilot-instructions.md` i obsługę `AGENTS.md` sprawdź os
 
 ## Java i Maven
 
-Starter celuje w **JDK 17+**, `--release 17`, Maven **3.9.x**. Referencyjna linia narzędzi: JDK 17 lub 21 i Maven 3.9.11; dostępność na komputerze potwierdzają dopiero poniższe komendy. Wersje bibliotek są przypięte w `pom.xml`, [uzasadnienie i źródła](SOURCES.md). Nie ma wrappera `mvnw`; nie zakładaj, że istnieje.
+Starter celuje w **JDK 17+**, `--release 17`, Maven **3.9.x lub nowszy**. Sprawdzono JDK 21 i Maven 3.10.0; wcześniejsza linia referencyjna to JDK 17 lub 21 i Maven 3.9.11; dostępność na komputerze potwierdzają dopiero poniższe komendy. Wersje bibliotek są przypięte w `pom.xml`, [uzasadnienie i źródła](SOURCES.md). Nie ma wrappera `mvnw`; nie zakładaj, że istnieje.
 
 ```text
 java -version
@@ -44,7 +44,7 @@ javac -version
 mvn -version
 ```
 
-Maven powinien wskazywać JDK 17+ i właściwe Java home. Wbudowany Maven IntelliJ można uruchomić z okna Maven, jeśli jest zatwierdzony; zapisz jego rzeczywistą wersję i JDK. Nie zmieniaj globalnego PATH lub JAVA_HOME bez potrzeby. Pierwsze uruchomienie wymaga zatwierdzonego dostępu do repozytorium artefaktów; tryb `mvn -o test` zadziała tylko z już kompletną lokalną pamięcią zależności. Nie wyłączaj TLS ani polityki proxy.
+Maven powinien wskazywać JDK 17+ i właściwe Java home. Wbudowany Maven IntelliJ można uruchomić z okna Maven, jeśli jest zatwierdzony; zapisz jego rzeczywistą wersję i JDK. Nie zmieniaj globalnego PATH lub JAVA_HOME bez potrzeby. Pierwsze uruchomienie wymaga zatwierdzonego dostępu do repozytorium artefaktów; tryb `mvn clean -o test` zadziała tylko z już kompletną lokalną pamięcią zależności. Nie wyłączaj TLS ani polityki proxy.
 
 Z katalogu głównego repozytorium, PowerShell:
 
@@ -61,7 +61,7 @@ cd course-materials/exercises/coi-java
 Dalej polecenia są takie same:
 
 ```text
-mvn test
+mvn clean test
 ```
 
 Baza oczekuje 12 testów, bez błędów i pominięć. Testy same tworzą serwer na losowym porcie `127.0.0.1`, wysyłają prawdziwe HTTP i zamykają serwer. Nie wymagają Chrome, konta AI, bazy danych, Docker ani klucza API. Zapisz wynik z `target/surefire-reports/`; brak startu runnera oznacza brak wyniku testów.
@@ -71,7 +71,7 @@ Baza oczekuje 12 testów, bez błędów i pominięć. Testy same tworzą serwer 
 REST Assured ma sens jako czytelna kontrola JSON i statusów, obok małego smoke API opartego na JDK. Nie dodajemy Spring Boot, bo fixture go nie używa.
 
 ```text
-mvn -Pcontract test
+mvn clean -Pcontract test
 ```
 
 Oczekiwane 14 testów, 0 pominiętych. Przy przechodzeniu między profilami usuń poprzednie wyniki i klasy:
@@ -85,20 +85,20 @@ Profil Selenium **nie pobiera Chrome ani ChromeDrivera**. IT/prowadzący muszą 
 PowerShell, po wskazaniu zatwierdzonych plików:
 
 ```powershell
-mvn -Pselenium test '-Dworkshop.chrome=C:\Program Files\Google\Chrome\Application\chrome.exe' '-Dworkshop.chromedriver=C:\approved-tools\chromedriver.exe'
+mvn clean -Pselenium test '-Dworkshop.chrome=C:\Program Files\Google\Chrome\Application\chrome.exe' '-Dworkshop.chromedriver=C:\approved-tools\chromedriver.exe'
 ```
 
 Linux, po wskazaniu zatwierdzonego drivera:
 
 ```bash
-mvn -Pselenium test -Dworkshop.chrome=/usr/bin/google-chrome -Dworkshop.chromedriver=/approved-tools/chromedriver
+mvn clean -Pselenium test -Dworkshop.chrome=/usr/bin/google-chrome -Dworkshop.chromedriver=/approved-tools/chromedriver
 ```
 
 Oczekiwane 14 testów, 0 pominiętych i dwa PNG w `target/evidence/`. Brak pliku lub niezgodność drivera ma zakończyć test błędem, nie pominięciem. Nie uruchamiaj instalacji przeglądarek Playwright ani Selenium Manager dla tego ćwiczenia. Nie dodawaj `--no-sandbox` ani przełączników obchodzących politykę komputera.
 
 ## Jawne uruchomienie UI i pełna odpowiedź API
 
-Po udanym `mvn test` klasy i zasoby są w `target/classes`. Uruchom fixture tylko na czas ćwiczenia:
+Po udanym `mvn clean test` klasy i zasoby są w `target/classes`. Uruchom fixture tylko na czas ćwiczenia:
 
 ```text
 java -cp target/classes pl.workshop.qa.FixtureServer 8087

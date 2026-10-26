@@ -13,13 +13,13 @@ Polityka liczby osób i pojemności, odczyt dwóch terminów przez HTTP oraz pro
 
 | Polecenie w tym katalogu | Oczekiwana liczba testów bazowych | Zakres |
 |---|---:|---|
-| `mvn test` | 12, 0 pominiętych | 8 polityki + 4 prawdziwego lokalnego HTTP |
-| `mvn -Dtest=AppointmentPolicyTest test` | 8, 0 pominiętych | Reguły zachowania |
-| `mvn -Dtest=ApiSmokeTest test` | 4, 0 pominiętych | API bez mocków |
-| `mvn -Pcontract test` | 14, 0 pominiętych | Baza + 2 REST Assured |
-| `mvn -Pcontract -Dtest=SlotContractTest test` | 2, 0 pominiętych | Tylko kontrakt odczytu |
-| `mvn -Pselenium test` z jawnymi ścieżkami Chrome/drivera | 14, 0 pominiętych | Baza + 2 Selenium |
-| `mvn -Pcontract,selenium test` z tymi ścieżkami | 16, 0 pominiętych | Wszystkie opcjonalne zestawy |
+| `mvn clean test` | 12, 0 pominiętych | 8 polityki + 4 prawdziwego lokalnego HTTP |
+| `mvn clean -Dtest=AppointmentPolicyTest test` | 8, 0 pominiętych | Reguły zachowania |
+| `mvn clean -Dtest=ApiSmokeTest test` | 4, 0 pominiętych | API bez mocków |
+| `mvn clean -Pcontract test` | 14, 0 pominiętych | Baza + 2 REST Assured |
+| `mvn clean -Pcontract -Dtest=SlotContractTest test` | 2, 0 pominiętych | Tylko kontrakt odczytu |
+| `mvn clean -Pselenium test` z jawnymi ścieżkami Chrome/drivera | 14, 0 pominiętych | Baza + 2 Selenium |
+| `mvn clean '-Pcontract,selenium' test` z tymi ścieżkami | 16, 0 pominiętych | Wszystkie opcjonalne zestawy |
 
 To **oczekiwania wynikające z dostarczonych testów, nie protokół wykonania na Twoim komputerze**. Samo policzenie `@Test` nie dowodzi odkrycia przez runner. Zapisz faktyczne liczby z Surefire. Nie ma testów `@Disabled`, domyślnych wadliwych przykładów ani ukrytego omijania braku przeglądarki. Po dopisaniu własnych testów liczby wzrosną. Przy zmianie profili użyj najpierw `mvn clean`, aby usunąć skompilowane klasy poprzedniego profilu; inaczej Maven może nadal je odkryć.
 

@@ -64,7 +64,7 @@ Investigate production code and fixtures before changing a failing assertion. Do
 
 Use the application's actual runtime and verified commands. The browser flow below applies to web applications; desktop applications need their real UI, and command-line tools need observable CLI checks.
 
-Use **the Playwright CLI** to drive the real running app like a human tester:
+Use **the Playwright CLI**, if already installed and approved, to drive the real running app like a human tester. Otherwise perform and record a manual browser check without installing extra tooling:
 
 1. Start the app with its verified project command and open it in the browser. Record successful startup separately from compilation and test execution.
 2. Take a screenshot of every screen you touched.

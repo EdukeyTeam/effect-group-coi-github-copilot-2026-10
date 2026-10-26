@@ -1,5 +1,25 @@
 # Ćwiczenia Java QA z Copilot
 
+## Mapa ćwiczeń strony i repozytorium
+
+[Ćwiczenia na stronie kursu](https://devpowers.com/szkolenia/effect-group/coi-github-copilot-2026-10/cwiczenia.html) mają krótkie identyfikatory QA. Poniższe pełne zadania repozytorium używają identyfikatorów COI-QA. Wybierz zakres przed uruchomieniem agenta: prompt strony nie upoważnia automatycznie do wszystkich działań pełnego zadania. QA04 obejmuje pracę nad testem; implementacja jednego AC-05 w COI-QA-05 wymaga osobnej decyzji.
+
+| Strona | Pełne zadanie w repo |
+|---|---|
+| QA01 | COI-QA-00 |
+| QA02 | COI-QA-00 |
+| QA03 | COI-QA-01 |
+| QA04 | COI-QA-02 / COI-QA-05 |
+| QA05 | COI-QA-03 |
+| QA06 | COI-QA-04 |
+| QA07 | COI-QA-10 |
+| QA08 | COI-QA-06 |
+| QA09 | COI-QA-07 |
+| QA10 | COI-QA-08 |
+| QA11 | COI-QA-09 |
+| QA12 | COI-QA-10 |
+
+
 Pełne prompty są przeznaczone do wklejenia w IntelliJ Copilot lub Copilot CLI po świadomym wybraniu tego startera. Każdy ma stały ID i wersję 1.0. Ścieżki `src/...` odnoszą się do katalogu `course-materials/exercises/coi-java/`, nie do root `app/`. Najpierw [SETUP](SETUP.md), potem [SPEC](SPEC.md). Czasy są budżetem ćwiczenia; nie zastępują godzin i programu zajęć.
 
 Do każdego wyniku dołącz [raport](REPORT-TEMPLATE.md). Gdy brakuje instalacji, dostępu do modelu lub kredytów, wykonaj wariant plikowy ręcznie albo w parze. Nie musisz kupować dostępu. Materiały w `evidence/` są syntetyczne. Nie kopiuj ich do raportu jako rzekomo wykonanych testów.
@@ -26,7 +46,7 @@ Wskaż: katalog projektu, źródło wymagań, granicę między działającym odc
 **Czas:** 25 minut. **Efekt:** 6-8 scenariuszy z normalnym wejściem, granicami i błędami, powiązanych z AC. **Start:** `SPEC.md`, `src/test/java/pl/workshop/qa/AppointmentPolicyTest.java`, `evidence/slots.synthetic.json`, `REPORT-TEMPLATE.md`. **Polecenie, jeśli środowisko działa:**
 
 ```text
-mvn -Dtest=AppointmentPolicyTest test
+mvn clean -Dtest=AppointmentPolicyTest test
 ```
 
 **Baza:** 8 testów polityki; endpointy zapisu nadal 501. **Granice:** tylko projekt testów, bez zmiany implementacji lub kryteriów. **Bez instalacji/kredytów:** przeczytaj te cztery pliki; przygotuj tabelę ręcznie, oznacz brak wykonania.
@@ -42,7 +62,7 @@ Na podstawie SPEC.md startera Java QA oraz AppointmentPolicyTest.java zaprojektu
 **Czas:** 35 minut. **Efekt:** jeden nowy test zachowania albo udokumentowane istniejące pokrycie. **Start:** `AppointmentPolicy.java`, `AppointmentPolicyTest.java`, `SPEC.md` AC-02/03/04/10. **Polecenie:**
 
 ```text
-mvn -Dtest=AppointmentPolicyTest test
+mvn clean -Dtest=AppointmentPolicyTest test
 ```
 
 **Baza:** 8 testów. Przypadek `partySize=-1, remaining=2` nie ma osobnego testu, ale dostarczony kod już go odrzuca. Nowy test może więc od razu być zielony. **Granice:** najpierw tylko testy; nie psuj kodu, żeby wymusić Red. **Bez instalacji/kredytów:** napisz propozycję testu i wskaż, co sprawdziłby runner, bez deklarowania wyniku.
@@ -58,13 +78,13 @@ Przeczytaj SPEC.md AC-02/03/04/10, AppointmentPolicy.java i AppointmentPolicyTes
 **Czas:** 40 minut. **Efekt:** diagnoza poparta wskazanymi liniami dowodów, mały Page Object/test lub propozycja diffu. **Start:** `src/selenium/java/pl/workshop/qa/SlotsBrowserTest.java`, `src/main/resources/index.html`, `evidence/BrittleSlotTest.java.txt`, `evidence/flaky-ci.synthetic.log`, `evidence/slots-dom.synthetic.html`. **Polecenie bazowe Linux:**
 
 ```bash
-mvn -Pselenium -Dtest=SlotsBrowserTest test -Dworkshop.chrome=/usr/bin/google-chrome -Dworkshop.chromedriver=/approved-tools/chromedriver
+mvn clean -Pselenium -Dtest=SlotsBrowserTest test -Dworkshop.chrome=/usr/bin/google-chrome -Dworkshop.chromedriver=/approved-tools/chromedriver
 ```
 
 PowerShell, zastąp ścieżki faktycznymi:
 
 ```powershell
-mvn -Pselenium -Dtest=SlotsBrowserTest test '-Dworkshop.chrome=C:\Program Files\Google\Chrome\Application\chrome.exe' '-Dworkshop.chromedriver=C:\approved-tools\chromedriver.exe'
+mvn clean -Pselenium -Dtest=SlotsBrowserTest test '-Dworkshop.chrome=C:\Program Files\Google\Chrome\Application\chrome.exe' '-Dworkshop.chromedriver=C:\approved-tools\chromedriver.exe'
 ```
 
 **Baza:** 2 testy Selenium, 0 pominiętych, jeżeli zatwierdzone pliki i sandbox Chrome działają. Wadliwy `.java.txt` jest fragmentem do analizy, nie domyślnym testem ani samodzielną klasą do uruchomienia. **Granice:** nie stosuj automatycznie fragmentu, nie zmieniaj API, nie dodawaj sleep/retry i nie wyłączaj sandboxa. **Bez instalacji/kredytów:** diagnoza na podstawie syntetycznego DOM/logów i propozycja Page Object; bez potwierdzenia stabilności przez wykonanie.
@@ -72,7 +92,7 @@ mvn -Pselenium -Dtest=SlotsBrowserTest test '-Dworkshop.chrome=C:\Program Files\
 **Pełny prompt:**
 
 ```text
-Zdiagnozuj bounded problem Selenium Java, korzystając tylko z SlotsBrowserTest.java, index.html, SPEC.md AC-07 i evidence/BrittleSlotTest.java.txt, flaky-ci.synthetic.log, slots-dom.synthetic.html. Dowody są jawnie syntetyczne, nie są uruchomieniem w COI. Nie zakładaj, że syntetyczny log da się odtworzyć identycznie na szybkim komputerze. Oddziel hipotezę dotyczącą synchronizacji od błędnego lokatora i od niezaimplementowanego POST 501. Dla każdej podaj fakt, linię dowodu i sposób falsyfikacji. Zaproponuj najmniejszą zmianę: Page Object dla wyboru slotu i asercję wyniku użytkownika. Nie dawaj Thread.sleep, retries, ignorowania wyjątków, mieszaniny implicit/explicit wait ani osłabionych asercji. Najpierw porównaj propozycję z istniejącą działającą bazą; jeśli mamy browser i driver, uruchom dwa testy bazowe i zapisz ich wyniki. Po moim wyborze przenieś jeden fragment do nowego testu w src/selenium/java i pokaż, jaki warunek ma wykryć. Nie zmieniaj domyślnego mvn test ani nie aktywuj wadliwego pliku automatycznie. Zapisz PNG i raport lub oznacz, że to wyłącznie analiza plików. Nie instaluj browsera/drivera i nie zmieniaj uprawnień.
+Zdiagnozuj bounded problem Selenium Java, korzystając tylko z SlotsBrowserTest.java, index.html, SPEC.md AC-07 i evidence/BrittleSlotTest.java.txt, flaky-ci.synthetic.log, slots-dom.synthetic.html. Dowody są jawnie syntetyczne, nie są uruchomieniem w COI. Nie zakładaj, że syntetyczny log da się odtworzyć identycznie na szybkim komputerze. Oddziel hipotezę dotyczącą synchronizacji od błędnego lokatora i od niezaimplementowanego POST 501. Dla każdej podaj fakt, linię dowodu i sposób falsyfikacji. Zaproponuj najmniejszą zmianę: Page Object dla wyboru slotu i asercję wyniku użytkownika. Nie dawaj Thread.sleep, retries, ignorowania wyjątków, mieszaniny implicit/explicit wait ani osłabionych asercji. Najpierw porównaj propozycję z istniejącą działającą bazą; jeśli mamy browser i driver, uruchom dwa testy bazowe i zapisz ich wyniki. Po moim wyborze przenieś jeden fragment do nowego testu w src/selenium/java i pokaż, jaki warunek ma wykryć. Nie zmieniaj domyślnego mvn clean test ani nie aktywuj wadliwego pliku automatycznie. Zapisz PNG i raport lub oznacz, że to wyłącznie analiza plików. Nie instaluj browsera/drivera i nie zmieniaj uprawnień.
 ```
 
 ## COI-QA-04 v1.0: kontrakt REST Assured i dowód odpowiedzi
@@ -80,7 +100,7 @@ Zdiagnozuj bounded problem Selenium Java, korzystając tylko z SlotsBrowserTest.
 **Czas:** 40 minut. **Efekt:** świeży zapis odpowiedzi lokalnego API i jeden dodatkowy test kontraktu albo jednoznacznie opisany brak dostępu. **Start:** `src/contract/java/pl/workshop/qa/SlotContractTest.java`, `src/main/resources/slots.json`, `SPEC.md` AC-01, `SETUP.md` sekcja przechwycenia HTTP. **Polecenie:**
 
 ```text
-mvn -Pcontract -Dtest=SlotContractTest test
+mvn clean -Pcontract -Dtest=SlotContractTest test
 ```
 
 **Baza:** 2 testy kontraktu odczytu, prawdziwy HTTP bez mocków. Pierwsze użycie profilu wymaga zatwierdzonego pobrania bibliotek. **Granice:** lokalny adres loopback; brak realnych usług, tokenów i zmyślonych odpowiedzi. **Bez instalacji/kredytów:** `evidence/slots.synthetic.json` służy do propozycji asercji; nie nazywaj go przechwyceniem ani gotowym mockiem.
@@ -96,10 +116,10 @@ Przeczytaj SPEC.md AC-01, pom.xml, SlotContractTest.java i slots.json. Ustal, co
 **Czas:** 35 minut, po wyborze przez grupę; nie jest warunkiem pozostałych ćwiczeń. **Efekt:** jeden pionowy wycinek AC-05 z Red -> Green -> Refactor. **Start:** `SPEC.md` AC-05, `ApiSmokeTest.java`, `FixtureServer.java`, `AppointmentPolicy.java`. Utwórz własny `src/test/java/pl/workshop/qa/ReservationWriteTest.java`. **Polecenie po napisaniu testu:**
 
 ```text
-mvn -Dtest=ReservationWriteTest test
+mvn clean -Dtest=ReservationWriteTest test
 ```
 
-**Baza przed zmianą:** `mvn test` ma 12 testów; nowa klasa nie istnieje. Nowy test powinien wykazać **501 zamiast 201**, a nie błąd kompilacji lub połączenia. **Granice:** tylko jeden syntetyczny sukces AC-05, bez całego produktu i bez deklarowania AC-06/08 jako gotowych. **Bez instalacji/kredytów:** zapisz scenariusz, proponowany test i przewidywaną obserwację; nie nazywaj przewidywania Red z wykonania.
+**Baza przed zmianą:** `mvn clean test` ma 12 testów; nowa klasa nie istnieje. Nowy test powinien wykazać **501 zamiast 201**, a nie błąd kompilacji lub połączenia. **Granice:** tylko jeden syntetyczny sukces AC-05, bez całego produktu i bez deklarowania AC-06/08 jako gotowych. **Bez instalacji/kredytów:** zapisz scenariusz, proponowany test i przewidywaną obserwację; nie nazywaj przewidywania Red z wykonania.
 
 **Pełny prompt:**
 
@@ -109,7 +129,7 @@ Realizujemy wyłącznie jeden sukces AC-05 z SPEC.md startera Java QA. Nie buduj
 
 ## COI-QA-06 v1.0: Selenium, Playwright i eksploracja agenta
 
-**Czas:** 30 minut. **Efekt:** porównanie na jednym przepływie, lista rzeczywistych obserwacji i granic. **Start:** `src/main/resources/index.html`, `SlotsBrowserTest.java`, `evidence/slots-dom.synthetic.html`, `SOURCES.md`. Po działającym `mvn test` polecenie startu:
+**Czas:** 30 minut. **Efekt:** porównanie na jednym przepływie, lista rzeczywistych obserwacji i granic. **Start:** `src/main/resources/index.html`, `SlotsBrowserTest.java`, `evidence/slots-dom.synthetic.html`, `SOURCES.md`. Po działającym `mvn clean test` polecenie startu:
 
 ```text
 java -cp target/classes pl.workshop.qa.FixtureServer 8087

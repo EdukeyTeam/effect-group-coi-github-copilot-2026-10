@@ -40,7 +40,7 @@ class SlotsBrowserTest {
     @Test void listsBothSlotsOnRealPage() {
         assertEquals("Wizyty - dane syntetyczne", driver.getTitle());
         assertEquals(2, driver.findElements(By.cssSelector("[data-testid='slot']")).size());
-        assertTrue(driver.findElement(By.id("slot-SYN-01")).getText().contains("2"));
+        assertTrue(driver.findElement(By.id("slot-SYN-01")).getText().contains("miejsca: 2"));
     }
 
     @Test void selectsAvailableSlotByStableId() {

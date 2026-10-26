@@ -7,6 +7,8 @@ Przebieg przygotowania materiałów: **26.10.2026**. Sprawdzono źródła starte
 | Baza JUnit i rzeczywisty lokalny HTTP | 12 | 0 / 0 / 0 |
 | Profile contract i selenium razem | 16 | 0 / 0 / 0 |
 
+Po doprecyzowaniu asercji liczby miejsc ponownie przeszło 16 testów. Kontrolowana zmiana wyświetlanej pojemności na 9 w osobnej kopii spowodowała oczekiwaną porażkę jednego testu Selenium; starter pozostał bez tej zmiany.
+
 Zachowano raporty Surefire i dwa zrzuty z Selenium. Osobna próba działającego UI w Chrome obejmowała listę dwóch terminów, wyłączony pełny termin, wybór SYN-01, walidację zera w formularzu oraz jawny komunikat dla niegotowego zapisu. Sprawdzono szerokości 1440 i 390 px, rzeczywiste odpowiedzi HTTP oraz brak nieobsłużonych wyjątków strony. To weryfikacja fixture, a nie zakończenie ćwiczenia implementacji.
 
 ## Komunikaty i granice
