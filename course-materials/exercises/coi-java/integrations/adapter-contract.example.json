@@ -1,0 +1,29 @@
+{
+  "enabled": false,
+  "transport": "file",
+  "networkAllowed": false,
+  "dryRun": true,
+  "deliveryStatus": "NOT_SENT",
+  "contractKind": "workshop-file-format-not-atlassian-request",
+  "requiredOutputFields": [
+    "ticketRef",
+    "sourceFile",
+    "findings",
+    "dryRun",
+    "deliveryStatus"
+  ],
+  "findingFields": [
+    "criterionId",
+    "severity",
+    "evidence",
+    "recommendation"
+  ],
+  "allowedSeverity": [
+    "low",
+    "medium",
+    "high"
+  ],
+  "remoteProductVersion": null,
+  "remoteApiVersion": null,
+  "remoteEndpoint": null
+}

@@ -1,0 +1,9 @@
+SYNTHETIC ANDROID DIAGNOSIS INPUT. No actual Appium/device session.
+Context declared by synthetic scenario: NATIVE_APP
+1. requested locator: css selector, #reserve
+2. result: InvalidSelectorError, strategy "css selector" is not supported in this native context
+3. separate attempt locator: id, pl.synthetic.visits:id/reserve
+4. click accepted by synthetic driver; no screenshot or timestamped XML immediately afterwards
+5. immediate text assertion expected "Rezerwacja potwierdzona", received "Brak wolnych miejsc"
+6. hierarchy artifact: android-hierarchy.synthetic.xml (synthetic, capture time not established)
+Question: what observations are missing before calling line 5 a timing issue?

@@ -1,0 +1,9 @@
+// SYNTHETIC, DELIBERATELY FAULTY, INERT FRAGMENT. NOT A RUNNABLE TEST CLASS.
+// COI-QA-03: analyze before choosing whether to create a real exercise test.
+// Assumes a driver and base URI supplied by the surrounding test; neither is defined here.
+driver.get(baseUri.toString());
+Thread.sleep(100);
+driver.findElement(By.cssSelector("#slots li:nth-child(1) button")).click();
+assertEquals("SYN-01", driver.findElement(By.id("selected-slot")).getText());
+driver.findElement(By.xpath("//button[text()='Rezerwuj']")).click();
+assertTrue(driver.findElement(By.id("result")).getText().contains("Sukces"));

@@ -1,6 +1,6 @@
 # Agent config examples
 
-Example configurations for the agents used in the course. The repository root holds project settings (filesystem/network permissions, MCP servers) and curated command rules. Provider profiles and sub-agents live here: copy the ones you need and adapt them. Writing your own sub-agent from one of these is a course exercise.
+Warsztat COI korzysta przede wszystkim z [Copilot](copilot/README.md) i [startera Java QA](../exercises/coi-java/README.md). Poniższa biblioteka jest opcjonalna. Root konfiguracje nie uruchamiają MCP, hooków, providerów ani własnych agentów; zachowują defensywne reguły uprawnień. Nie kopiuj ustawień do katalogów aktywnych ani profilu użytkownika bez świadomego wyboru, sprawdzenia wersji i zgody na dany zakres. Przykłady Codex, Claude Code i OpenCode nie są warunkiem ćwiczeń.
 
 Each folder has the shape of that tool's own config folder.
 

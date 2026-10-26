@@ -1,0 +1,13 @@
+{
+  "synthetic": true,
+  "ticketRef": "SYN-QA-17",
+  "sourceFile": "evidence/weak-test.synthetic.diff",
+  "findings": [
+    {
+      "criterionId": "AC-01",
+      "severity": "high",
+      "evidence": "Proponowana zmiana akceptuje każdy dodatni status HTTP i dowolne niepuste body.",
+      "recommendation": "Zachowaj asercję statusu, typu i semantycznej zawartości."
+    }
+  ]
+}

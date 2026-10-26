@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Wizyty - dane syntetyczne</title>
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 2rem auto; padding: 0 1rem; max-width: 44rem; color: #17212c; background: #f8fafc; }
+    main { background: white; border: 1px solid #cbd5e1; border-radius: .5rem; padding: 1.5rem; }
+    button, input { font: inherit; padding: .7rem; margin: .3rem 0; }
+    button { cursor: pointer; border: 1px solid #334155; border-radius: .25rem; background: #eff6ff; color: #17212c; }
+    button:focus-visible, input:focus-visible { outline: 3px solid #0369a1; outline-offset: 2px; }
+    button:disabled { cursor: default; opacity: .65; }
+    li { margin: .7rem 0; } label { display: block; } #result { min-height: 3rem; }
+  </style>
+</head>
+<body><main>
+  <h1>Wizyty - dane syntetyczne</h1>
+  <p>Ćwiczenie QA. Dane przykładowe, bez połączenia z systemami COI. Zapis rezerwacji pozostaje zadaniem.</p>
+  <p id="load-status" role="status">Wczytywanie</p>
+  <ul id="slots" aria-label="Terminy wizyt"></ul>
+  <p>Wybrany termin: <strong id="selected-slot">Nie wybrano</strong></p>
+  <form id="reservation-form">
+    <label for="party-size">Liczba osób (1-4)</label>
+    <input id="party-size" name="partySize" type="number" min="1" max="4" value="1" required>
+    <button id="reserve" type="submit" disabled>Zarezerwuj</button>
+  </form>
+  <p id="result" role="status" aria-live="polite"></p>
+</main>
+<script>
+  const status = document.getElementById('load-status');
+  const result = document.getElementById('result');
+  let selectedSlot = null;
+  async function loadSlots() {
+    try {
+      const response = await fetch('/api/slots');
+      if (!response.ok) throw new Error('HTTP ' + response.status);
+      const data = await response.json();
+      for (const slot of data.slots) {
+        const item = document.createElement('li');
+        const button = document.createElement('button');
+        button.type = 'button'; button.id = 'slot-' + slot.id;
+        button.dataset.testid = 'slot'; button.disabled = slot.remaining === 0;
+        button.textContent = slot.id + ' | ' + slot.start.replace('T', ' ') + ' | miejsca: ' + slot.remaining + ' | ' + data.zone;
+        button.addEventListener('click', () => {
+          selectedSlot = slot.id;
+          document.getElementById('selected-slot').textContent = slot.id;
+          document.getElementById('reserve').disabled = false;
+        });
+        item.append(button); document.getElementById('slots').append(item);
+      }
+      status.textContent = 'Gotowe';
+    } catch (error) { status.textContent = 'Nie udało się pobrać terminów: ' + error.message; }
+  }
+  document.getElementById('reservation-form').addEventListener('submit', async event => {
+    event.preventDefault();
+    if (selectedSlot === null) { result.textContent = 'Wybierz termin.'; return; }
+    const body = new URLSearchParams({slotId: selectedSlot, partySize: document.getElementById('party-size').value});
+    try {
+      const response = await fetch('/api/reservations', {method: 'POST', body});
+      const data = await response.json();
+      if (response.status === 501) result.textContent = 'Funkcja ćwiczeniowa: zapis nie jest gotowy.';
+      else if (!response.ok) result.textContent = 'Błąd rezerwacji: ' + data.error;
+      else result.textContent = 'Rezerwacja: ' + data.id;
+      // AC-08 remains a learner task: refresh capacity and validate the complete reservation flow.
+    } catch (error) { result.textContent = 'Nie udało się wysłać rezerwacji: ' + error.message; }
+  });
+  loadSlots();
+</script></body></html>

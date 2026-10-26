@@ -2,26 +2,28 @@
 
 ## Project
 
-This is a **course project** for the "Agenci AI dla testerów automatycznych - GitHub Copilot" training organized by Effect Group, 2 dni (26-27.10.2026), remote on cloud VMs. The primary taught agent is OpenAI Codex CLI, with Claude Code and GitHub Copilot as covered alternatives. The group selects the actual application and change. Greenfield work starts from the empty scaffold and defines the product live; legacy work uses a separate clone of the original application. Its domain, stack and architecture come from the real task and inspected sources, not historical course examples: research → application or feature PRD → ADR → implementation with agents.
+This is the participant **materials repository** for "Agenci AI dla testerów automatycznych - GitHub Copilot", organized by Effect Group for COI, 26-27 October 2026, online, 09:00-16:00 Europe/Warsaw. Participants use their own COI computers with limited installation rights. Verify readiness; do not assume prepared VMs, administrator access, CI vendor, client API versions or Copilot seats.
 
-This is only the **base starting repository** for the course; concrete decisions are made live with the group.
+The primary tools are GitHub Copilot in IntelliJ IDEA and GitHub Copilot CLI. Java/Selenium QA is the main track. Playwright comparison, agent browser exploration and native Android are separate topics. Codex, Claude Code and other configurations in the library are optional comparisons. No cloud provisioning, real client integrations or additional subscriptions are prerequisites.
 
-Chat in Polish unless the user asks for another language. Repository documentation uses English unless another project language is agreed. The trainer chooses the teaching language separately. This is a greenfield scaffold, not an agreed product specification. For a legacy-led course, keep materials separate and work in the original application clone; adapt these instructions to its actual stack and verification commands.
+Root `app/` stays an unsolved scaffold. Do not build a new application there automatically. Participants may explicitly choose the synthetic optional starter at `course-materials/exercises/coi-java/README.md`; then use its `SPEC.md`, Maven descriptor and scoped agent instructions. A real application stays in its own authorized checkout, with its own PRD, ADR, stack and verified commands. Teaching examples never define the client's architecture.
 
-**Key docs** (created during the course — load only when in doubt):
-- `docs/PRD.md` — product requirements and acceptance criteria
-- `docs/ADR/` — Architecture Decision Records
-- `docs/design-guidelines.md` — design system and tokens
+Chat and participant materials use Polish. Agent policy may use English. `PROGRAM.md` is the exact agreed program: do not rewrite it or create an application PRD for the course schedule. Root settings do not activate example agents, hooks, skills or model providers. Do not use Azure models for programming or review, enable the inactive Azure review workflow, or add secrets to it.
+
+**Key docs** (created during the course - load only when in doubt):
+- `docs/PRD.md` - product requirements and acceptance criteria
+- `docs/ADR/` - Architecture Decision Records
+- `docs/design-guidelines.md` - design system and tokens
 
 ---
 
 ## Repository Layout
 
 ```
-app/                 Application built during the course (start: empty scaffold)
+app/                 Unsolved scaffold; no default application
 assets/              Design tokens, logo, favicon
 docs/                PRD, ADR, design system
-course-materials/    Notes, scripts, examples, research
+course-materials/    Full optional library; explicitly selected Java QA starter
 ```
 
 **Do not read `course-materials/` on your own.** It holds teaching examples from this and earlier courses: sample PRDs, ADRs, prompts and agent instructions. They are not requirements or conventions for this app. Do not browse, search or index it during normal work; open a file there only when the user names it or asks for course material.
@@ -48,9 +50,9 @@ For every feature and bug fix:
 4. Implement the minimum code needed to make them pass.
 5. Run the full verification suite for the changed scope.
 6. Refactor only while tests stay green.
-7. **Manually validate the running application** (see Manual QA below). Automated tests — especially E2E — can produce false passes; a task is not done until the real app has been exercised by hand.
+7. **Manually validate the running application** (see Manual QA below). Automated tests - especially E2E - can produce false passes; a task is not done until the real app has been exercised by hand.
 
-If the area has no suitable test infrastructure yet, add it as part of the task — do not silently skip tests.
+If the area has no suitable test infrastructure yet, add it as part of the task - do not silently skip tests.
 
 Before creating or refreshing a unit/integration mock of an endpoint or database, make a fresh real request/query in an authorized local/test environment using synthetic data. Save the complete response verbatim (HTTP status, headers and body, or database result rows and type/schema information) and derive the mock from that capture, not from documentation that may be stale. Use a response containing no secrets; record its date, target, request/query and relevant service version without credentials. If a safe capture cannot be obtained, report the missing prerequisite instead of inventing a response shape.
 
@@ -66,9 +68,9 @@ Use **the Playwright CLI** to drive the real running app like a human tester:
 
 1. Start the app with its verified project command and open it in the browser. Record successful startup separately from compilation and test execution.
 2. Take a screenshot of every screen you touched.
-3. Exercise the real flow end-to-end by hand: fill the form, upload the image, submit, follow the navigation to the chat, send a message — whatever the changed scope covers.
+3. Exercise the real flow end-to-end by hand: for the Java fixture, select a slot, enter party size, submit and verify the documented result; for another application, follow its actual changed flow.
 4. Verify the flow actually works: correct navigation, correct data displayed, no console errors, Polish UI text.
-5. **Compare your screenshots against the brand reference** (`assets/homepage.png` + `docs/design-guidelines.md` tokens): colors, typography, spacing, button styles and logo placement must match the application's agreed brand reference.
+5. **For an application with an agreed brand, compare your screenshots against the brand reference** (`assets/homepage.png` + `docs/design-guidelines.md` tokens): colors, typography, spacing, button styles and logo placement must match the application's agreed brand reference. The synthetic Java fixture uses its own plain, Polish UI; do not invent a COI brand reference.
 6. Report what you validated (steps + screenshots) in your task summary. If anything looks or behaves wrong, fix it before committing.
 
 ### Verification (required before every commit)
@@ -84,7 +86,7 @@ Verify only the scope relevant to your change. If the change affects runtime beh
 
 **Verification:** For runtime changes, start the real application and finish with Manual QA. Record compilation/build, test execution and startup as separate checks, including discovery counts and skips. A successful build or E2E run alone does not establish that the app works. Documentation-only changes use diff, link and consistency checks and do not require application startup. Fix errors and warnings introduced by the change; report pre-existing failures without hiding them.
 
-**Env Vars:** See `.env.example` (OPENROUTER_API_KEY required)
+**Env Vars:** The optional Java fixture needs no API key. `.env.example` belongs to optional application examples; never require an LLM provider key for the Java starter.
 
 ### Commit Rules
 - Commit only after verification passes and the changed scope is in a working state.
