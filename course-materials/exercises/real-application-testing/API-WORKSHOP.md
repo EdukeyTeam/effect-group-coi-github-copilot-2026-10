@@ -29,6 +29,16 @@ Nie ma tras CRUD dla polis/szkód, logowania, sesji, statusu zakupionej polisy a
 
 W `apps/api-spring` deskryptor wskazuje Spring Boot **3.5.0**, Java toolchain **17**, Sentry **8.11.1**, plugin Sentry **5.5.0**; wrapper wskazuje Gradle **9.6.1**. README aplikacji podaje inne wersje. Sprawdź zgodność tej konkretnej kombinacji, nie aktualizuj zależności w ramach ćwiczenia. [Macierz Gradle](https://docs.gradle.org/current/userguide/compatibility.html) opisuje obsługiwane JVM.
 
+Przed pierwszym poleceniem Gradle potwierdź wyłączenie telemetrii pluginu Sentry w przygotowanej kopii i usuń odziedziczone poświadczenia z procesu. Wyłączenie SDK aplikacji nie dowodzi wyłączenia telemetrii pluginu. Bez potwierdzenia tych warunków pozostajemy przy analizie źródła, bez uruchamiania zadań Gradle i bez odczytu `.env`.
+
+W Windows rozpocznij nową sesję PowerShell i usuń zmienne Sentry, bez wypisywania wartości:
+
+```powershell
+Get-ChildItem Env:SENTRY_* | Remove-Item
+```
+
+Polecenia bash uruchamiaj w czystym środowisku procesu podanym poniżej. Ustawienie niesekretnego JAVA_HOME może być potrzebne zgodnie z lokalną konfiguracją.
+
 Pierwszy warunek w terminalu:
 
 ```bash
@@ -44,7 +54,7 @@ Następnie sprawdź launcher, bez instalowania globalnego Gradle:
 Wymagany toolchain kompilacji to **JDK 17**, niezależnie od JDK używanego do uruchamiania Gradle. Samo JDK 21 z ćwiczenia jFTP nie zapewnia toolchain 17; projekt nie deklaruje automatycznego resolvera. Sprawdź dostępne toolchainy przed testami:
 
 ```bash
-./gradlew -q javaToolchains
+env -i HOME="$HOME" PATH="$PATH" SENTRY_DSN= SENTRY_ENABLED=false SENTRY_DEBUG=false ./gradlew -q javaToolchains
 ```
 
 W Windows:
@@ -71,21 +81,11 @@ W osobnym terminalu uruchom lokalny serwer z włączonymi scenariuszami demonstr
 env -i HOME="$HOME" PATH="$PATH" SENTRY_DSN= SENTRY_ENABLED=false SENTRY_DEBUG=false ./gradlew bootRun --args='--sentry.enabled=false --sentry.dsn= --sentry.debug=false --demo.scenarios.enabled=true'
 ```
 
-Jeżeli Java wymaga u Ciebie `JAVA_HOME`, ustaw tę niesekretną ścieżkę w środowisku uruchomienia zgodnie z lokalną konfiguracją. W PowerShell najpierw usuń odziedziczone zmienne Sentry z bieżącej sesji:
-
-```powershell
-Get-ChildItem Env:SENTRY_* | Remove-Item
-```
-
-Potem uruchom serwer z wyłączonym SDK:
-
 Test jednostkowy w tej samej oczyszczonej sesji PowerShell:
 
 ```powershell
 .\gradlew.bat test --tests com.policylab.api.QuoteServiceTest --console=plain
 ```
-
-Przed pierwszym wykonaniem sprawdź również konfigurację pluginu Sentry Gradle: wyłączenie SDK aplikacji nie dowodzi wyłączenia telemetrii pluginu. Jeżeli nie potwierdzono jej wyłączenia w kopii ćwiczenia, pozostajemy przy analizie źródła.
 
 ```powershell
 ./gradlew.bat bootRun --args="--sentry.enabled=false --sentry.dsn= --sentry.debug=false --demo.scenarios.enabled=true"

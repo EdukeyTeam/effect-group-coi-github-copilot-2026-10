@@ -197,7 +197,8 @@ Użyj jawnie legacy-codebase-workflows, jeśli dostępny; bez niego: AGENTS.md,
 oryginalne definicje i wywołania, cytowania plik:wiersze + symbol + commit,
 fakty oddzielone od hipotez. Nie instaluj skillu, narzędzi ani nowego stosu.
 
-Przeczytaj aplikacyjne docs/qa/JFTP-QA05v1.md i odpowiednie instrukcje.
+Przeczytaj istniejące docs/modernization-plan.md i odpowiednie instrukcje.
+Raport docs/qa/JFTP-QA05v1.md dopiero utworzysz jako wynik tego ćwiczenia.
 Przed kodem zapisz w istniejącym planie aplikacji mały zakres bez zmiany zachowania
 i uzgodnij go z uczestnikiem/trenerem. Jeśli zasady checkoutu wymagają wcześniejszej
 zgody lub dodatkowych testów, wykonaj to wymaganie przed zmianą. Nie twórz nowego
