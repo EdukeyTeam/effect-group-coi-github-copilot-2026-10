@@ -49,8 +49,9 @@ Nie wymyślaj HTTP/API. Swing wymaga pulpitu i kontroli natywnej, nie Selenium.
 Bez obcych serwerów, prawdziwych profili, haseł i danych użytkowników.
 
 Kontrola końcowa: każda pozycja ma obserwowalny wynik lub jawne pytanie;
-odróżnij plan testu od wykonanego testu. Bez instalacji wykonaj tę samą analizę
-na przypiętych źródłach przez przeglądarkę. Oddaj raport, nie odpowiedzi w kodzie.
+odróżnij plan testu od wykonanego testu. Bez instalacji uczestnik otwiera
+przypięte źródła w przeglądarce i udostępnia potrzebny fragment agentowi.
+Agent analizuje udostępniony kod i przygotowuje raport, bez deklaracji obsługi GUI.
 Nie commituj ani nie pushuj.
 ```
 
@@ -89,13 +90,14 @@ Izoluj stan przed załadowaniem klas; wzoruj granice izolacji na dostarczonych t
 
 Uruchom własną klasę przez wrapper z -Dtest=LocalFilteringQAExerciseTest test;
 w bash użyj sh ./mvnw i profilu -Pwindows-bootstrap, na Windows .\mvnw.cmd.
-Potem uruchom test jako pełne test. Zapisz komendy, liczby testów i pominięcia.
+Potem uruchom pełny zestaw testów poleceniem test. Zapisz komendy, liczby testów i pominięcia.
 Nowy test charakteryzujący może od razu przejść na oryginalnym kodzie. Nie zmieniaj
 asercji, aby ukryć zaskakujący wynik, i nie ogłaszaj naprawy defektu.
 
 Oddaj diff nowych testów i docs/qa/JFTP-QA02v1.md z wyroczniami oraz dowodami.
-Przy dostępnym pulpicie porównaj jeden przypadek przez realny lokalny panel Swing,
-zapisz kroki i zrzut; bez pulpitu oznacz GUI jako niewykonane. Selenium/Playwright
+Uczestnik, nie agent: przy dostępnym pulpicie ręcznie porównaj jeden przypadek
+w realnym lokalnym panelu Swing, zapisz kroki i zrzut. Agent oznacza GUI jako
+niewykonane, dopóki uczestnik nie dostarczy rzeczywistych dowodów. Selenium/Playwright
 nie sterują tym oknem. Bez możliwości uruchomienia oddaj projekt testów z adnotacją
 niewykonane, bez deklaracji Green. Nie zmieniaj produkcji, nie commituj i nie pushuj.
 ```
@@ -138,8 +140,9 @@ wybór klasy: -Dtest=LocalSortingQAExerciseTest test; pełna kontrola: test.
 Oddaj testy i docs/qa/JFTP-QA03v1.md z trzema wynikami: Green, wykryta mutacja,
 Green po odtworzeniu. Mutacja jest eksperymentem siły testu, nie odkrytym defektem.
 Nie pozostawiaj mutacji ani nowych reguł sortowania w kodzie produkcyjnym.
-Przy dostępnym GUI porównaj sortowanie kolumny przez dwa kliknięcia nagłówka
-i zrzut ekranu. Bez GUI zaznacz brak kontroli natywnego Swing.
+Uczestnik, nie agent: na dostępnym pulpicie ręcznie porównaj sortowanie kolumny
+przez dwa kliknięcia nagłówka i zrzut ekranu. Agent raportuje brak kontroli
+natywnego Swing do czasu otrzymania rzeczywistych dowodów.
 Bez możliwości wykonania testów oddaj tylko plan i nie mutuj kodu.
 Bez sieci FTP, danych użytkowników, commitów i pushowania.
 ```
@@ -219,9 +222,10 @@ aby zaakceptować regresję. Oddziel ewentualny rzeczywisty defekt do raportu;
 nie naprawiaj go przy okazji. Przejrzyj diff i wymagane aktualizacje dokumentacji
 checkoutu. Zachowaj kodowanie i zakończenia linii oryginalnego pliku.
 
-Na prawdziwym pulpicie uruchom aplikację z syntetycznym profilem według instrukcji
-startowej. Sprawdź w panelu lokalnym przypadek dopasowany, niedopasowany i katalog;
-zapisz kroki, wyniki, log i zrzuty. Bez Selenium/Playwright i zewnętrznego FTP.
+Uczestnik, nie agent: na prawdziwym pulpicie uruchom aplikację z syntetycznym
+profilem według instrukcji startowej. Ręcznie sprawdź w panelu lokalnym przypadek
+dopasowany, niedopasowany i katalog; zapisz kroki, wyniki, log i zrzuty.
+Agent nie deklaruje kontroli GUI bez tych dowodów. Bez Selenium/Playwright i zewnętrznego FTP.
 Brak pulpitu lub działających testów oznacza: oddaj analizę i projekt diffu,
 nie wprowadzaj refaktoryzacji jako ukończonej. Dokumentacja to nadal użyteczny wynik.
 Oddaj docs/qa/JFTP-QA05v1.md, diff, porównanie przed/po i dowody. Bez subagentów,
