@@ -1,6 +1,7 @@
 # GitHub Copilot: Java QA workshop
 
 - This is a materials repository for Effect Group / COI, 26-27 October 2026. Work in Polish with IntelliJ Copilot or Copilot CLI; verify actual capabilities and organization policy separately.
+- Main day1 route: the separate pinned jFTP modernization clone, with its own instructions and new testing tasks. Materials are under `course-materials/exercises/jftp-legacy/` when explicitly selected. Java API/Angular and native Android are separate applications. The Test Notebook idea is for discussion, not an approved PRD or instruction to build it.
 - Root `app/` is an unsolved scaffold. Do not build an application there automatically. Do not infer a returns/complaints domain, TypeScript stack, cloud VMs or Codex-led route from examples.
 - Do not browse, search, index or read `course-materials/` during ordinary application work. When the user explicitly chooses the Java QA starter, read only `course-materials/exercises/coi-java/AGENTS.md`, `SPEC.md` and the files named by that exercise. The rest is an optional library, not project requirements.
 - In an actual application checkout, read its approved PRD/ADRs and build descriptor first. Use its runtime and commands. Keep course planning separate from application requirements. Preserve `PROGRAM.md` exactly.
