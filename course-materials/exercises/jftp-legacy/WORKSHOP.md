@@ -62,7 +62,7 @@ Pracujemy na jFTP w osobnym checkoutcie LucasMatuszewski/jftp-modernization,
 commit c0e8a0fa7f8be99907ccdc50ac2bdc4ad7a98a86. Zadanie JFTP-QA02v1, 40 minut.
 Celem jest poznanie aktualnego zachowania, bez jego poprawiania.
 
-Jawnie użyj legacy-codebase-workflows, jeśli jest dostępny. W przeciwnym razie:
+Załaduj jawnie już zainstalowany legacy-codebase-workflows. Bez tego skillu:
 potwierdź rewizję i AGENTS.md, przeczytaj oryginalne definicje oraz wywołania,
 cytuj plik:wiersze, symbol i commit, oddziel obserwację od hipotezy.
 Nie instaluj skillu, mapperów, RAG ani zależności poza zatwierdzoną konfiguracją.
