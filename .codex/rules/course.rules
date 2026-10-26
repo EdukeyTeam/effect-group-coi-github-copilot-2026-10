@@ -10,7 +10,7 @@ prefix_rule(pattern=["whoami",], decision="allow", justification="Print the curr
 
 # Ordinary reads, searches, Git, builds, tests, Docker inspection and shell wrappers
 # have no explicit prompt rules. The sandbox controls access; on-request reviews
-# escalation. Broad prompt prefixes would send even sandboxed work to auto_review.
+# escalation. Broad prompt prefixes would request approval even for sandboxed work.
 # Do not replace them with broad allow rules, which have different bypass semantics.
 
 # Narrow exception: worktree creation requires review, even inside the sandbox.
@@ -18,7 +18,7 @@ prefix_rule(pattern=["whoami",], decision="allow", justification="Print the curr
 prefix_rule(pattern=[["git", "git.exe"], "worktree", "add"], decision="prompt", justification="Ask before creating a Git worktree, as required by the shared machine instructions.", match=["git worktree add ../example", "git.exe worktree add ../example feature/example"], not_match=["git worktree list", "git -C . worktree add ../example"])
 
 # Network access is enabled. HTTP-client operations explicitly request review.
-# With approvals_reviewer = "auto_review", eligible prompts go to the judge.
+# Approval requests follow the effective user/session reviewer setting.
 prefix_rule(pattern=[["curl", "curl.exe", "wget", "wget.exe"]], decision="prompt", justification="Review the destination and any upload, download or execution side effects.", match=["curl https://example.com", "wget https://example.com"], not_match=["rg ERROR logs"])
 
 # DENY: retained course restrictions (plus modern command aliases).
