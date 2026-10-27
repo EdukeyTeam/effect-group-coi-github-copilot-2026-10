@@ -1,6 +1,6 @@
 # Lokatory odczytane z APK (My Demo App 2.3.0)
 
-Bez urządzenia też da się zacząć: plik APK zawiera układy ekranów z identyfikatorami (`resource-id`) i opisami dostępności (`content-desc`). Tak samo odczytasz je z wersji testowej Waszej aplikacji, np. przez Android Studio (Build, Analyze APK) albo `apkanalyzer`. W działającej aplikacji zawsze sprawdź je w Appium Inspector lub zrzucie hierarchii, bo część elementów powstaje dynamicznie.
+Bez urządzenia też da się zacząć: plik APK zawiera układy ekranów z identyfikatorami (`resource-id`) i opisami dostępności (`content-desc`). Tak samo odczytasz je z wersji testowej Waszej aplikacji, np. przez Android Studio (Build, Analyze APK) albo `apkanalyzer`. Dotyczy to ekranów w klasycznych układach XML. Ekranów w Jetpack Compose nie ma w APK jako XML: ich lokatory odczytasz tylko z działającej aplikacji. W działającej aplikacji zawsze sprawdź lokatory w Appium Inspector lub zrzucie hierarchii, bo część elementów powstaje dynamicznie.
 
 Pakiet: `com.saucelabs.mydemoapp.android`. Pełne id w Appium: `com.saucelabs.mydemoapp.android:id/<nazwa>`.
 

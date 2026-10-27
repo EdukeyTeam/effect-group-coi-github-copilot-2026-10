@@ -1,6 +1,6 @@
 # Triage nieudanych testów: model decyzyjny
 
-Nocny przebieg w Jenkinsie kończy się na czerwono. Zanim ktokolwiek założy błąd w Jira, trzeba ustalić, czy zawiniła aplikacja, test, środowisko czy dane. To powtarzalna decyzja z ustaloną listą odpowiedzi: dobre zadanie dla modelu, pod warunkiem że kategorie, sygnały i format wyniku ustala człowiek.
+Nocny przebieg w Jenkinsie kończy się na czerwono. Zanim ktokolwiek założy błąd w Jirze, trzeba ustalić, czy zawiniła aplikacja, test, środowisko czy dane. To powtarzalna decyzja z ustaloną listą odpowiedzi: dobre zadanie dla modelu, pod warunkiem że kategorie, sygnały i format wyniku ustala człowiek.
 
 W katalogu [`run-artifacts/`](run-artifacts/) są prawdziwe wyniki przebiegu zestawu `triage-demo` z projektu [`dolibarr-selenium`](../black-box-web/dolibarr-selenium/): `testng-results.xml`, raporty Surefire oraz dowody z każdej porażki (zrzut ekranu, HTML strony, adres, `failure.json`). Cztery testy padły z czterech różnych powodów.
 
@@ -11,9 +11,9 @@ Te same nazwy stosuje ReportPortal, więc wyniki da się później przenieść d
 | Kategoria | Kiedy | Typowe sygnały | Co dalej |
 |---|---|---|---|
 | Product Bug | Aplikacja działa niezgodnie z wymaganiem | Asercja na treści lub stanie zgodnym z kryterium akceptacji, powtarzalne ręcznie | Błąd w Jira dla zespołu developerskiego, z dowodami |
-| Automation Bug | Zawiódł kod testu | `NoSuchElementException`, timeout na lokatorze, zła wyrocznia w teście, brak synchronizacji | Poprawka testu, bez zgłoszenia do developerów |
+| Automation Bug | Zawiódł kod testu | `NoSuchElementException`, timeout na lokatorze, błędny oczekiwany wynik w asercji, brak synchronizacji | Poprawka testu, bez zgłoszenia do developerów |
 | System Issue | Zawiodło środowisko | DNS, `ERR_CONNECTION_*`, 502/503, wygasły certyfikat, brak przeglądarki lub drivera | Zgłoszenie do utrzymania środowiska, ponowne uruchomienie |
-| No Defect | Wynik oczekiwany lub znany | Test wyłączony, znany i zaakceptowany wyjątek | Zamknięcie z uzasadnieniem |
+| No Defect | Porażka nie jest błędem | Potwierdzona, celowa zmiana w aplikacji (test czeka na aktualizację), planowane wyłączenie usługi, zachowanie zaakceptowane biznesowo | Zamknięcie z uzasadnieniem, aktualizacja testu |
 | To Investigate | Sygnały się wykluczają albo brak danych | Wymaganie niejasne, zachowanie zależy od konfiguracji | Pytanie do analityka, nie błąd |
 
 ## Zadanie (35 min)
@@ -53,7 +53,7 @@ Wynik: tabela Markdown (test, kategoria, pewność, sygnał, plik dowodu, nastę
 ```text
 Na podstawie triage przygotuj zgłoszenie błędu do Jira po polsku dla testu sklasyfikowanego jako Product Bug albo To Investigate.
 
-Pola: Tytuł (maks. 80 znaków, opisuje objaw, nie przyczynę), Środowisko (adres, przeglądarka, wersja aplikacji z dowodów), Kroki odtworzenia (numerowane, możliwe do wykonania ręcznie), Wynik oczekiwany (z kryterium akceptacji), Wynik rzeczywisty (cytat z dowodu), Dowody (nazwy plików), Priorytet z uzasadnieniem, Pytania otwarte.
+Pola: Tytuł (maks. 80 znaków, opisuje objaw, nie przyczynę), Środowisko (adres, przeglądarka, wersja aplikacji z dowodów), Dane do korelacji (czas porażki z failure.json, konto testowe, adres strony, identyfikator rekordu, jeśli jest), Kroki odtworzenia (numerowane, możliwe do wykonania ręcznie), Wynik oczekiwany (z kryterium akceptacji), Wynik rzeczywisty (cytat z dowodu), Dowody (nazwy plików), Priorytet z uzasadnieniem, Pytania otwarte.
 
 Nie dopisuj przyczyny w kodzie aplikacji: nie znamy kodu. Jeśli to może być konfiguracja środowiska, napisz to w Pytaniach otwartych.
 ```

@@ -11,7 +11,7 @@ Projekt testów automatycznych Selenium WebDriver + TestNG (Java 17, Maven) dla 
 ## Konwencje
 
 - Page Object w `pages/`: lokatory jako prywatne pola `By`, publiczne metody opisują intencję użytkownika (`loginAs`, `errorMessage`).
-- Lokatory: id, name, tekst widoczny dla użytkownika, CSS. XPath tylko z uzasadnieniem w komentarzu.
+- Lokatory: id, name, CSS po stabilnych atrybutach, `By.linkText` dla linków. Krótki XPath po widocznym tekście tylko z uzasadnieniem w komentarzu, nigdy ścieżki zależne od układu strony.
 - Tylko jawne oczekiwania (`WebDriverWait`). Bez `Thread.sleep` i bez implicit wait.
 - Testy w `tests/`, opis testu zaczyna się od ID przypadku, np. `TC-WEB-04: ...`.
 - Konfiguracja tylko przez `TestConfig` (właściwości `-D` lub zmienne środowiskowe). Bez adresów i haseł w testach.

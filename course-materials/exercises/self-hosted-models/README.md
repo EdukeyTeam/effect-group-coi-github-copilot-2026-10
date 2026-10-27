@@ -8,21 +8,21 @@ Pokaz prowadzącego (ok. 40 min). Cel: zrozumieć elementy, z których składa s
 2. **Serwer modelu**: udostępnia model przez API zgodne z OpenAI (`/v1/chat/completions`). Dla zespołu: vLLM. Na jeden komputer albo pilotaż: Ollama lub LM Studio.
 3. **Narzędzie agenta**: czyta pliki, uruchamia polecenia i wysyła zapytania do serwera modelu. OpenCode, Mistral Vibe, Zed, IntelliJ.
 
-Agent jest tak dobry, jak model potrafi wywoływać narzędzia. Bez obsługi tool calling dostajesz czat, nie agenta.
+Skuteczność agenta zależy od tego, jak dobrze model wywołuje narzędzia. Bez obsługi tool calling dostajesz czat, nie agenta.
 
 ## Modele z UE i alternatywy
 
 | Model | Rozmiar | Licencja | Sprzęt (orientacyjnie) | Do czego |
 |---|---|---|---|---|
-| Devstral Small 2 (Mistral) | 24B | Apache 2.0 | 1 GPU 24 GB (kwantyzacja Q4) albo 48 GB | Agent kodujący, testy, Page Objects |
+| Devstral Small 2 (Mistral) | 24B | Apache 2.0 | 1 GPU 24 GB (Q4, krótszy kontekst) albo 48 GB (FP8) | Agent kodujący, testy, Page Objects |
 | Devstral 2 (Mistral) | 123B | Modified MIT, warunek przychodu | Kilka GPU klasy H100 | Najmocniejszy model Mistral do agentów |
-| Mistral Small 4 | 119B MoE, ok. 6,5B aktywnych | Apache 2.0 | ok. 70-125 GB VRAM | Agent, rozumowanie i obrazy w jednym modelu |
+| Mistral Small 4 | 119B MoE, ok. 6,5B aktywnych | Apache 2.0 | ok. 70-125 GB VRAM w kwantyzacji 4-bit/FP8, ponad 240 GB w BF16 | Agent, rozumowanie i obrazy w jednym modelu |
 | Ministral 3 | 3B-14B | Apache 2.0 | Laptop lub mała karta | Szybkie, proste zadania |
 | Bielik v3 (SpeakLeash, PL) | 11B | Apache 2.0 | 1 GPU | Teksty po polsku: przypadki, raporty, zgłoszenia |
 | gpt-oss-120b (OpenAI) | 117B MoE | Apache 2.0 | 1 GPU 80 GB | Triage, rozumowanie |
 | Qwen3-Coder (Alibaba) | 30B-480B | Apache 2.0 | od 1 GPU 24 GB | Silne kodowanie, model spoza UE |
 
-Codestral 22B ma licencję nieprodukcyjną (MNPL): nie nadaje się do pracy zawodowej bez umowy z Mistral.
+Codestral 22B ma licencję nieprodukcyjną (MNPL): nie nadaje się do pracy zawodowej bez umowy z firmą Mistral. Licencje z warunkiem przychodu (Modified MIT w Devstral 2) w instytucji publicznej też wymagają oceny prawnej. Bezpieczny start pilotażu: modele na Apache 2.0.
 
 Uczciwie: najlepsze modele komercyjne są wyraźnie mocniejsze w długich zadaniach agentowych. Model lokalny dobrze radzi sobie z zadaniami o jasnym zakresie: przypadek na test, Page Object z HTML, klasyfikacja porażki według reguł.
 
@@ -31,7 +31,7 @@ Uczciwie: najlepsze modele komercyjne są wyraźnie mocniejsze w długich zadani
 vLLM z obsługą narzędzi dla modeli Mistral:
 
 ```bash
-vllm serve mistralai/Devstral-Small-2-24B-Instruct-2512 --tokenizer-mode mistral --config-format mistral --load-format mistral --enable-auto-tool-choice --tool-call-parser mistral
+vllm serve mistralai/Devstral-Small-2-24B-Instruct-2512 --max-model-len 65536 --tokenizer-mode mistral --config-format mistral --load-format mistral --enable-auto-tool-choice --tool-call-parser mistral
 ```
 
 Ollama na jednym komputerze:
@@ -40,7 +40,7 @@ Ollama na jednym komputerze:
 ollama run devstral-small-2
 ```
 
-W sieci odciętej od internetu wagi i obraz serwera przenosi się z maszyny przejściowej. Dostęp do serwera tylko z sieci wewnętrznej, logi zapytań według zasad bezpieczeństwa.
+W sieci odciętej od internetu wagi modelu i obraz kontenera przenosi się przez stację pośredniczącą (airlock). Dostęp do serwera tylko z sieci wewnętrznej, logi zapytań według zasad bezpieczeństwa.
 
 ## OpenCode z własnym serwerem
 

@@ -17,14 +17,14 @@ Kolejność lokatorów:
 3. UiSelector albo tekst, gdy dwa poprzednie nie istnieją,
 4. XPath tylko w ostateczności.
 
-Jeśli brakuje `content-desc` albo `resource-id` na ważnym elemencie, to dobre zgłoszenie do developerów: poprawia testowalność i dostępność jednocześnie.
+Jeśli ważny element nie ma stabilnego `resource-id` ani `content-desc`, zgłoś developerom problem testowalności. Dostępność to osobne sprawdzenie: element może mieć poprawną nazwę z tekstu lub etykiety, co weryfikujesz np. w TalkBack.
 
 ## Pokaz prowadzącego (20 min)
 
 Emulator Android 14 z Appium działa u prowadzącego. Zobaczycie:
 
 1. Appium Inspector: zrzut ekranu, hierarchia, proponowane lokatory.
-2. Zrzut hierarchii bez Appium: `adb exec-out uiautomator dump /dev/tty`.
+2. Zrzut hierarchii bez Appium (przy zamkniętej sesji Appium i Inspectora, bo UiAutomator obsługuje jednego klienta naraz): `adb shell uiautomator dump /sdcard/window_dump.xml`, potem `adb exec-out cat /sdcard/window_dump.xml`.
 3. Uruchomienie `LoginTest` i dowody z `target/evidence/` przy porażce.
 4. Agenta w IntelliJ z serwerem MCP dla urządzenia (mobile-mcp albo Appium MCP): agent czyta hierarchię, klika, opisuje kroki i proponuje test.
 
@@ -41,7 +41,8 @@ Emulator Android 14 z Appium działa u prowadzącego. Zobaczycie:
 Pytania do zespołu developerskiego, zanim zaczniecie automatyzację wersji testowej:
 
 - Czy build testowy działa na emulatorze i bez Play Integrity? Produkcyjne aplikacje tego typu zwykle blokują emulatory i zrootowane urządzenia.
-- Czy ekrany z dokumentami mają `FLAG_SECURE`? Wtedy zrzuty ekranu są czarne, ale hierarchia (`getPageSource`) i kliknięcia działają.
+- Czy ekrany z dokumentami mają `FLAG_SECURE`? Zrzut ekranu będzie czarny albo zakończy się wyjątkiem (listener dowodów musi to przeżyć). Hierarchia zwykle działa, ale widoki oznaczone jako wrażliwe dla dostępności (Android 14+) mogą być ukryte także przed UiAutomator. Zapytajcie, co jest wyłączone w buildzie testowym.
+- Czy ekrany są w Jetpack Compose? Wtedy lokatorów nie odczytacie z APK, tylko z działającej aplikacji, i to pod warunkiem, że developerzy dodali `testTag` udostępniany jako `resource-id`.
 - Jak zalogować się bez prawdziwej tożsamości: konta testowe, stały PIN, `noReset` dla aktywowanej aplikacji.
 - Czy kluczowe elementy mają `content-desc` lub stabilne `resource-id`?
 
@@ -53,7 +54,7 @@ Pracujesz w projekcie testów Appium (Java, TestNG, UiAutomator2) dla aplikacji 
 Najpierw przeczytaj: pom.xml, testng.xml, config/MobileConfig.java, base/BaseMobileTest.java, pages/*.java, tests/LoginTest.java. Trzymaj się ich konwencji.
 
 Zadanie: formularz danych do wysyłki (checkout).
-1. Zaproponuj plan: CheckoutInfoPage z metodami intencji (wypełnij dane, wyślij, odczytaj błędy), lokatory zgodnie z kolejnością: accessibility id, resource-id, UiSelector, XPath tylko z uzasadnieniem.
+1. Zaproponuj plan: klasa CheckoutInfoPage z metodami opisującymi cel użytkownika (wypełnij dane, wyślij formularz, odczytaj błędy), lokatory zgodnie z kolejnością: accessibility id, resource-id, UiSelector, XPath tylko z uzasadnieniem.
 2. Przypadki: TC-AND-10 puste pola obowiązkowe pokazują komunikaty błędów, TC-AND-11 brak kodu pocztowego pokazuje tylko błąd kodu, TC-AND-12 poprawne dane pozwalają przejść do płatności.
 3. Do ekranu checkout dojdziesz przez: logowanie, produkt z katalogu, dodanie do koszyka, koszyk, przejście do zamówienia. Lokatorów tych kroków nie ma w pliku: oznacz je jako DO SPRAWDZENIA w Appium Inspector i nie zgaduj tekstów.
 4. Tylko jawne oczekiwania, bez Thread.sleep. Asercje sprawdzają teksty komunikatów z pliku lokatorów.
@@ -70,7 +71,7 @@ Masz dostęp do urządzenia Android przez serwer MCP. Aplikacja com.saucelabs.my
 Cel: sprawdź logowanie i formularz danych do wysyłki. Czas: 10 minut. Dane: tylko konta z ekranu logowania i fikcyjne adresy.
 1. Przed każdą akcją odczytaj hierarchię ekranu i nazwij element, który klikasz (resource-id lub content-desc).
 2. Zapisuj kroki tak, by człowiek mógł je powtórzyć ręcznie.
-3. Szukaj: brakujących komunikatów błędów, elementów bez content-desc, niespójnych tekstów, problemów z klawiaturą zasłaniającą pola.
+3. Szukaj: brakujących komunikatów błędów, ważnych elementów bez stabilnego identyfikatora, niespójnych tekstów, problemów z klawiaturą zasłaniającą pola.
 4. Oddziel obserwację od hipotezy.
 
 Wynik: lista znalezisk (krok, oczekiwane, rzeczywiste, dowód) i propozycja trzech przypadków testowych do automatyzacji w Appium + TestNG.

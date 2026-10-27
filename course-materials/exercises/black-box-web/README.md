@@ -1,6 +1,6 @@
 # Testy czarnej skrzynki: aplikacja webowa
 
-Testujesz prawdziwą aplikację finansową bez dostępu do jej kodu: Dolibarr 24 (ERP open source, publiczne demo). Masz adres, konto i [przypadki testowe](PRZYPADKI-TESTOWE.md). Copilot pomaga zamienić przypadek w Page Object i test Selenium + TestNG, a Ty pilnujesz wyroczni, danych i dowodów.
+Testujesz prawdziwą aplikację finansową bez dostępu do jej kodu: Dolibarr 24 (ERP open source, publiczne demo). Masz adres, konto i [przypadki testowe](PRZYPADKI-TESTOWE.md). Copilot pomaga zamienić przypadek w Page Object i test Selenium + TestNG, a Ty pilnujesz poprawności oczekiwanego wyniku, danych i dowodów.
 
 Moduł obejmuje noty kosztowe (wydatki pracowników z akceptacją), faktury, bank i projekty. To ten sam typ systemu, który testujecie na co dzień.
 
@@ -13,7 +13,7 @@ Moduł obejmuje noty kosztowe (wydatki pracowników z akceptacją), faktury, ban
    - Linux/macOS: `./mvnw -B test`
    - Albo w IntelliJ: prawy klik na `testng.xml`, Run.
 4. Oczekiwany wynik: `Tests run: 2, Failures: 0`. Domyślnie przeglądarka działa w tle. Żeby ją widzieć: `-Ddolibarr.headless=false`.
-5. Otwórz demo w przeglądarce i przejdź ręcznie TC-WEB-04. Bez tego nie ocenisz, co wygeneruje Copilot.
+5. Otwórz demo w przeglądarce i przejdź ręcznie TC-WEB-04 z datą kwietniową (`04/NN/2031`), żeby nie zająć okresu marcowego, którego użyje Twój automat. Bez tego nie ocenisz, co wygeneruje Copilot.
 
 Jeśli Maven nie pobiera zależności przez proxy firmowe, pracuj na kodzie bez uruchamiania i oznacz testy jako nieuruchomione.
 
@@ -28,11 +28,11 @@ Model nie zna Twojej aplikacji. Daj mu to, co widzi tester:
 
 Nie wklejaj HTML z systemów produkcyjnych z danymi osobowymi. W tym ćwiczeniu dane demo są publiczne.
 
-## Ćwiczenie 1: przypadek na test (35 min)
+## Ćwiczenie 1: od przypadku testowego do testu (35 min)
 
 1. Wybierz TC-WEB-03 albo TC-WEB-04. Skopiuj outerHTML formularza nowej noty.
 2. Otwórz Copilot Chat w IntelliJ w trybie Agent. Wklej prompt **BB-WEB-01** z przypadkiem i HTML.
-3. Przeczytaj plan agenta, zanim zatwierdzisz zmiany. Odrzuć `Thread.sleep`, długie XPath i asercje, których nie ma w przypadku.
+3. Przeczytaj plan agenta, zanim zatwierdzisz zmiany. Odrzuć `Thread.sleep`, długie wyrażenia XPath zależne od układu strony i asercje, których nie ma w przypadku.
 4. Uruchom test. Jeśli padnie, daj agentowi dowody z `target/evidence/` zamiast opisu słownego.
 5. Wynik: nowy Page Object, test z identyfikatorem TC w opisie, zielony przebieg albo opisany powód porażki.
 
@@ -74,7 +74,7 @@ HTML ekranu (outerHTML z przeglądarki):
 <wklej>
 
 Zadanie:
-1. Zaproponuj plan: jakie Page Objects i metody, jakie lokatory (najpierw id/name, potem tekst widoczny dla użytkownika, XPath tylko z uzasadnieniem), jaka asercja odpowiada oczekiwanemu wynikowi.
+1. Zaproponuj plan: jakie Page Objects i metody, jakie lokatory (najpierw id/name, potem CSS po stabilnych atrybutach, linkText dla linków, krótki XPath po widocznym tekście tylko z uzasadnieniem), jaka asercja odpowiada oczekiwanemu wynikowi.
 2. Po mojej akceptacji dodaj Page Object w pages/ i test w tests/. Opis testu zaczyna się od identyfikatora TC.
 3. Tylko jawne oczekiwania (WebDriverWait), bez Thread.sleep i bez implicit wait.
 4. Dane testowe: własna data z przypadku i opis z unikalnym znacznikiem. Nie zakładaj stanu danych innych osób.
@@ -91,7 +91,7 @@ Mój test <nazwa> przechodzi raz, a drugi raz pada na współdzielonym środowis
 
 1. Wyjaśnij przyczynę na podstawie dowodów z target/evidence/.
 2. Zaproponuj 2-3 strategie danych testowych dla środowiska, z którego korzystają też inne osoby i równoległe przebiegi (unikalny okres, sprzątanie przez UI po teście, osobny użytkownik). Dla każdej: koszt, ryzyko, co trzeba ustalić z zespołem środowiska.
-3. Wdroż strategię, którą wybiorę, i dodaj test negatywny dla nakładającego się okresu.
+3. Wdróż strategię, którą wybiorę, i dodaj test negatywny dla nakładającego się okresu.
 4. Uruchom test dwa razy z rzędu i pokaż oba wyniki.
 ```
 
