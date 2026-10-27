@@ -11,8 +11,10 @@ build/
 __pycache__/
 *.pyc
 .playwright-cli
+.idea
 
 # Private agent briefs and Java build artifacts
 .agent-briefs/
 **/target/
 *.class
+
