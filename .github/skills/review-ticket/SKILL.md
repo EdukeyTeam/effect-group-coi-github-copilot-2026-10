@@ -1,8 +1,8 @@
 ---
-agent: 'agent'
+name: review-ticket
 description: 'Review one bounded feature diff against its approved requirement and actual tests'
+disable-model-invocation: true
 ---
-
 Identify the actual application checkout, the approved criterion or ticket, and the current diff. Read the relevant PRD/ADR sections, applicable instructions, implementation and existing tests. Ask only for consequential missing sources; do not assume a particular language, practice track or docs/problem-brief.md exists. Teaching examples in course-materials are not requirements.
 
 If the participant explicitly chose the optional Java QA fixture, its SPEC.md acceptance criteria and pom.xml are the relevant specification and command sources. Do not demand a root application PRD for that exercise or infer client architecture from the fixture.
