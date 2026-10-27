@@ -2,27 +2,28 @@
 
 **Effect Group, 26-27.10.2026, online, 09:00-16:00 Europe/Warsaw.**
 
-[Materiały, slajdy i prompty](https://devpowers.com/szkolenia/effect-group/coi-github-copilot-2026-10/) | [Dokładny program](PROGRAM.md) | [Główne ćwiczenia jFTP](course-materials/exercises/jftp-legacy/README.md) | [Android: możliwości i granice](course-materials/Research/android-testing-options-2026-10.md)
+[Materiały, slajdy i prompty](https://devpowers.com/szkolenia/effect-group/coi-github-copilot-2026-10/) | [Dokładny program](PROGRAM.md) | [Indeks kursu](course-materials/Course%20INDEX%20-%20AI%20in%20Programming.md)
 
-Pracujemy z GitHub Copilot w IntelliJ IDEA oraz Copilot CLI nad testami istniejących aplikacji. Główna ścieżka pierwszego dnia to jFTP: poznanie kodu Java, projektowanie przypadków, testy charakterystyki i kontrolowana refaktoryzacja. Selenium i API omawiamy na osobnym przykładzie webowym. Drugiego dnia rozwijamy testy API i przeglądarki, porównujemy Selenium z Playwright oraz wybieramy wariant natywnego Androida. Review, triage CI i integracje on-prem odnosimy do tych zadań.
+Pracujemy z GitHub Copilot w IntelliJ IDEA i Copilot CLI, a w drugim dniu także z Microsoft 365 Copilot, którego używacie w pracy. Testujemy aplikacje tak jak na co dzień: z zewnątrz, bez dostępu do ich kodu.
+
+## Dzień 2: testy czarnej skrzynki
+
+1. [Web: Dolibarr i Selenium + TestNG](course-materials/exercises/black-box-web/README.md). Prawdziwy system finansowy (noty kosztowe, faktury), [przypadki testowe](course-materials/exercises/black-box-web/PRZYPADKI-TESTOWE.md) i [projekt startowy](course-materials/exercises/black-box-web/dolibarr-selenium/).
+2. [Android: Appium bez kodu aplikacji](course-materials/exercises/black-box-android/README.md). APK, [lokatory odczytane z APK](course-materials/exercises/black-box-android/LOKATORY-Z-APK.md) i [projekt startowy](course-materials/exercises/black-box-android/mydemoapp-appium/).
+3. [Triage nieudanych testów](course-materials/exercises/failure-triage/README.md). Prawdziwe wyniki przebiegu, kategorie jak w ReportPortal, zgłoszenie do Jira.
+4. [Microsoft 365 Copilot: agent testera](course-materials/exercises/m365-copilot/README.md).
+5. [Modele self-hosted: Mistral, OpenCode, Zed, IntelliJ](course-materials/exercises/self-hosted-models/README.md).
 
 ## Zacznij tutaj
 
-1. Otwórz repozytorium na swoim komputerze COI. Sprawdź zgodę organizacji na użycie agenta i przekazywany kontekst. Używamy wyłącznie danych syntetycznych.
-2. Sprawdź logowanie i dostęp do Copilot osobno w IntelliJ oraz CLI. Członkostwo w zespole GitHub nie przyznaje licencji Copilot. Konta, zaproszenia i licencje obsługuje prowadzący; ustawienia organizacji mogą ograniczać funkcje.
-3. Przeczytaj [start i kontrolę narzędzi](course-materials/exercises/coi-java/SETUP.md). Nie instaluj niczego z uprawnieniami administratora ani nie zmieniaj zabezpieczeń komputera. Gdy brakuje narzędzi, wybierz dostarczoną ścieżkę analizy plików.
-4. Otwórz [instrukcję jFTP](course-materials/exercises/jftp-legacy/README.md) i utwórz osobną kopię aplikacji na wskazanej rewizji. Materiały i kod aplikacji mają różne katalogi.
-5. Świadomie wybierz [opcjonalny starter Java QA](course-materials/exercises/coi-java/README.md). Nie wymaga on zbudowania całej aplikacji przed testowaniem. `app/` w katalogu głównym pozostaje pustym szkieletem.
+1. Sklonuj repozytorium albo pobierz ZIP. W IntelliJ otwórz jako projekt sam katalog ćwiczenia, np. `course-materials/exercises/black-box-web/dolibarr-selenium`. Wtedy Copilot czyta instrukcje tego projektu.
+2. Sprawdź Copilot Chat w IntelliJ w trybie Agent. Członkostwo w zespole GitHub nie przyznaje licencji Copilot: licencje obsługuje prowadzący.
+3. Uruchom testy startowe: `.\mvnw.cmd -B test` (Windows) albo `./mvnw -B test`. Bez dostępu do repozytorium bibliotek pracuj na kodzie i oznacz testy jako nieuruchomione.
+4. Nie instaluj niczego z uprawnieniami administratora i nie zmieniaj zabezpieczeń komputera.
 
-Starter to mały, celowo niekompletny model rezerwacji wizyt z syntetycznymi danymi. Nie przedstawia systemu COI. Zawiera testy JUnit i lokalnego API, opcjonalne Selenium/REST Assured oraz jawne zadania do wykonania. [Specyfikacja i pokrycie](course-materials/exercises/coi-java/SPEC.md) oddzielają działającą bazę od brakującego zachowania. Każde [ćwiczenie](course-materials/exercises/coi-java/WORKSHOP.md) podaje pliki, polecenie, pełny prompt, czas i wariant bez instalacji lub kredytów.
+## Dzień 1 i biblioteka ćwiczeń z kodem
 
-## Realne aplikacje i propozycje warsztatowe
-
-- [jFTP: start, źródła i 5 pełnych promptów QA](course-materials/exercises/jftp-legacy/README.md). Dostarczona baza ma 3 testy startowe. Nowe zadania obejmują filtry, sortowanie, kontrakt poleceń, dokumentację i refaktoryzację pod ochroną własnych testów. Swing wymaga innych narzędzi UI niż Selenium.
-- [Spring Petclinic REST + Angular: stanowe CRUD](course-materials/exercises/real-application-testing/PETCLINIC-WORKSHOP.md). Właściciel -> zwierzę -> wizyta, testy HTTP i przeglądarki, izolacja oraz sprzątanie danych. Źródła sprawdzone; uruchomienie wymaga próby w dopuszczonym środowisku.
-- [Java API, Angular i Android](course-materials/exercises/real-application-testing/README.md). Osobne aplikacje, przypięte źródła i jawne ograniczenia uruchomienia. Kotlin Android ma lokalne polisy i szkody; nie jest klientem backendu wycen.
-- [Test Notebook: krótki pomysł aplikacji](course-materials/ideas/test-notebook-idea.md). Projekty, przypadki, wyniki, formularze i dashboard; opcjonalny Kanban. SQLite, bez logowania w pierwszej wersji. Zakres, wymagania i ADR ustalimy razem. Nie jest to gotowy PRD ani obowiązkowe zadanie budowania aplikacji.
-- [Inspiracje: TestRail, Qase i Kiwi TCMS](course-materials/Research/test-management-inspiration-2026-10.md). Funkcje do porównania z codzienną pracą testerów, bez wymogu zakładania kont.
+Ćwiczenia, w których agent czyta kod aplikacji, przydadzą się zespołom z dostępem do kodu albo przy współpracy z developerami: [jFTP](course-materials/exercises/jftp-legacy/README.md), [Spring Petclinic REST + Angular](course-materials/exercises/real-application-testing/PETCLINIC-WORKSHOP.md), [Java API, Angular i Android ze źródeł](course-materials/exercises/real-application-testing/README.md), [mały starter Java QA](course-materials/exercises/coi-java/README.md) oraz [Test Notebook](course-materials/ideas/test-notebook-idea.md).
 
 ## Jak korzystać z agentów
 

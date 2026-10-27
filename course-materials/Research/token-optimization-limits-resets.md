@@ -1,6 +1,6 @@
 # Token optimization - limits, resets, cheaper models
 
-> Moved from [Course Notes - AI in Programming](../Course%20Notes%20-%20AI%20in%20Programming.md) on 2026-10-02 to keep the notes short. Facts verified 2026-10-01; dates and sources are on each item.
+> Moved from [Course INDEX - AI in Programming](../Course%20INDEX%20-%20AI%20in%20Programming.md) on 2026-10-02 to keep the notes short. Facts verified 2026-10-01; dates and sources are on each item.
 
 ## Limits and resets (Claude and Codex)
 
@@ -18,7 +18,7 @@
   - **Paid instant reset** (Plus/Pro **personal** plans only): restores **both** 5-hour and weekly allowances **immediately**; can't be banked or scheduled; next automatic weekly reset lands **7 days after your first request** post-reset - it pulls the weekly allowance **forward**, it doesn't add an extra one: [Paid weekly resets](https://help.openai.com/en/articles/20001507-paid-weekly-work-and-codex-rate-limit-resets)
   - **Banked resets** (granted on model releases and incidents, Plus/Pro): stored on the account for later use, **redeemable within about a month**; redeeming refreshes both windows and **moves your weekly reset date**
   - **Strategy (corrected)**: a reset overwrites any **unused** allowance, so never apply it while the weekly limit is not yet exhausted (right after a normal reset = 100% wasted). Burn the weekly allowance to zero, then apply the banked reset - you get a second full allowance back-to-back (**effectively 2x** for that doubled week) and the normal reset returns 7 days later. Apply it when you can actually work the following days, so the shifted 7-day window isn't wasted on idle days
-- **Cheaper models as subagents/workers**: GPT-6 **Luna** for high-volume subagent work (see [GPT-6 Luna](#gpt-6-luna-as-a-subagent-model) below), local **LFM2.5/Gemma 4/Qwen 3.6** for extraction and tool-call workers (see [local-models-as-agent-workers.md](local-models-as-agent-workers.md)), Chinese APIs (**MiniMax, Kimi, DeepSeek**) for per-token coding agents (see Pricing in the [Course Notes](../Course%20Notes%20-%20AI%20in%20Programming.md))
+- **Cheaper models as subagents/workers**: GPT-6 **Luna** for high-volume subagent work (see [GPT-6 Luna](#gpt-6-luna-as-a-subagent-model) below), local **LFM2.5/Gemma 4/Qwen 3.6** for extraction and tool-call workers (see [local-models-as-agent-workers.md](local-models-as-agent-workers.md)), Chinese APIs (**MiniMax, Kimi, DeepSeek**) for per-token coding agents (see Pricing in the [Course Notes](../Course%20INDEX%20-%20AI%20in%20Programming.md))
 
 ## GPT-6 Luna as a subagent model
 

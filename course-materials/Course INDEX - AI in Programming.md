@@ -1,4 +1,4 @@
-# AI in Programming - Course Notes
+# AI in Programming - Course INDEX
 
 Reference notes from earlier AI programming courses.
 
@@ -252,6 +252,13 @@ How AI changes developer careers - key insights from the 2026 future-of-work res
     - Hooks - trigger actions in deterministic way on events:
       - [Claude - Hooks](https://code.claude.com/docs/en/hooks-guide)
       - [Codex - Hooks](https://developers.openai.com/codex/hooks)
+      - [GitHub Copilot - Hooks](https://docs.github.com/en/copilot/concepts/customizations/hooks)
+    - GitHub Copilot docs (verified 27.10.2026):
+      - [Customization cheat sheet](https://docs.github.com/en/copilot/reference/customization-cheat-sheet) - instructions, prompt files, agents, skills, hooks, MCP in one table
+      - [Agent skills](https://docs.github.com/en/copilot/concepts/customizations/agent-skills) · [Custom agents](https://docs.github.com/en/copilot/concepts/customizations/custom-agents) · [MCP](https://docs.github.com/en/copilot/concepts/customizations/mcp)
+      - [Copilot in JetBrains](https://docs.github.com/en/copilot/concepts/agents/copilot-in-jetbrains) · [Custom agents in the IDE](https://docs.github.com/en/copilot/how-tos/copilot-in-your-ide/use-copilot-agents/use-custom-agents)
+      - Copilot CLI: [about](https://docs.github.com/en/copilot/concepts/agents/copilot-cli/about-copilot-cli) · [install](https://docs.github.com/en/copilot/how-tos/copilot-cli/set-up-copilot-cli/install-copilot-cli) · [command reference](https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference) · [config directory](https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-config-dir-reference) · [programmatic mode `copilot -p`](https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-programmatic-reference) · [ACP server](https://docs.github.com/en/copilot/reference/copilot-cli-reference/acp-server) · [add skills](https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/add-skills)
+      - [Computer use (preview)](https://docs.github.com/en/copilot/concepts/agent-capabilities/agent-powered-workflows-and-operations/computer-use) · [Coding agent firewall](https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent/customize-the-agent-firewall)
     - Goals / Loops:
       - [Claude - Goals](https://code.claude.com/docs/en/goal)
       - [Codex - Goals](https://developers.openai.com/codex/use-cases/follow-goals)

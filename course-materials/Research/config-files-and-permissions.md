@@ -1,6 +1,6 @@
 # Config files and permissions - Claude Code, Codex, Copilot CLI
 
-> Moved from [Course Notes - AI in Programming](../Course%20Notes%20-%20AI%20in%20Programming.md) on 2026-10-02 to keep the notes short. Facts verified 2026-10-01; dates and sources are on each item.
+> Moved from [Course INDEX - AI in Programming](../Course%20INDEX%20-%20AI%20in%20Programming.md) on 2026-10-02 to keep the notes short. Facts verified 2026-10-01; dates and sources are on each item.
 
 ## Permissions
 
