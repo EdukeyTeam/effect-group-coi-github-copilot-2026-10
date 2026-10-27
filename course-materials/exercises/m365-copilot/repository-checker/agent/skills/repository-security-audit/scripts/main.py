@@ -15,7 +15,8 @@ RULES = [
 ("java-risk","high",r"ObjectInputStream|InitialContext|JNDI|Class\.forName|System\.loadLibrary|DocumentBuilderFactory|SAXParserFactory")]
 SKIP={".git","node_modules","vendor","dist","build","target",".venv","venv"}
 # Excerpts go into a report file, so credential values are masked before they are stored.
-REDACT=[(re.compile(r"((?:token|secret|passw(?:or)?d|pwd|api.?key|access.?key|private.?key|credential)\w*[\"']?\s*[:=]\s*[\"']?)[^\s\"',;]+",re.I),r"\1[REDACTED]"),
+REDACT=[(re.compile(r"(\w+://)[^/\s:@]+:[^/\s@]+@"),r"\1[REDACTED]@"),
+(re.compile(r"((?:token|secret|passw(?:or)?d|pwd|api.?key|access.?key|private.?key|credential)\w*[\"']?\s*[:=]\s*[\"']?)[^\s\"',;]+",re.I),r"\1[REDACTED]"),
 (re.compile(r"-----BEGIN [A-Z ]*PRIVATE KEY-----.*"),"[REDACTED PRIVATE KEY]"),
 (re.compile(r"\b(gh[pousr]_|github_pat_|xox[abprs]-|sk-|AKIA)[\w-]+"),"[REDACTED]"),
 (re.compile(r"(?=[\w+/=-]*\d)(?=[\w+/=-]*[A-Za-z])[\w+/=-]{32,}"),"[REDACTED]")]
