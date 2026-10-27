@@ -1,0 +1,189 @@
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex,follow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Dolibarr Development Team">
+<meta name="anti-csrf-newtoken" content="2dc25ea14a5d087bbdee67693c2d435efb69181e729ae05409b052ec7bb2e684">
+<meta name="anti-csrf-currenttoken" content="2dc25ea14a5d087bbdee67693c2d435efb69181e729ae05409b052ec7bb2e684">
+<link rel="shortcut icon" type="image/x-icon" href="/viewimage.php?cache=1&amp;modulepart=mycompany&amp;file=logos%2Fthumbs%2Fmybigcompany_squarred_mini.png">
+<link rel="apple-touch-icon" href="/theme/apple-touch-icon.png">
+<link rel="manifest" href="/theme/manifest.json.php">
+<meta name="theme-color" content="rgb(0,0,0)">
+<title>Login @ 24.0.2</title>
+<script nonce="6b6ea58f" src="/public/includes/dolibarr-js-context/dolibarr-context.umd.js?layout=classic&amp;version=24.0.2"></script>
+<script nonce="6b6ea58f" src="/public/includes/dolibarr-js-context/dolibarr-tool.seteventmessage.js?layout=classic&amp;version=24.0.2"></script>
+<script nonce="6b6ea58f" src="/public/includes/dolibarr-js-context/dolibarr-tool.langs.js?layout=classic&amp;version=24.0.2"></script>
+<script nonce="6b6ea58f">Dolibarr.setContextVars({"DOL_VERSION":"24.0.2","DOL_URL_ROOT":"","MAIN_LANG_DEFAULT":"en_US","DOL_LANG_INTERFACE_URL":"\/public\/langs\/langs-tool-interface.php"});</script>
+<!-- Includes CSS for JQuery (Ajax library) -->
+<link rel="stylesheet" type="text/css" href="/public/includes/jquery/css/base/jquery-ui.css?layout=classic&amp;version=24.0.2">
+<link rel="stylesheet" type="text/css" href="/public/includes/jquery/plugins/jnotify/jquery.jnotify-alt.min.css?layout=classic&amp;version=24.0.2">
+<link rel="stylesheet" type="text/css" href="/public/includes/jquery/plugins/select2/dist/css/select2.css?layout=classic&amp;version=24.0.2">
+<!-- Includes CSS for font awesome -->
+<link rel="stylesheet" type="text/css" href="/theme/common/fontawesome-5/css/all.min.css?layout=classic&amp;version=24.0.2">
+<!-- Includes CSS for Dolibarr theme -->
+<link rel="stylesheet" type="text/css" href="/theme/eldy/style.css.php?lang=en_US&amp;theme=eldy&amp;entity=1&amp;layout=classic&amp;version=24.0.2&amp;revision=743&amp;dol_hide_topmenu=0&amp;dol_hide_leftmenu=0&amp;dol_optimize_smallscreen=0&amp;dol_no_mouse_hover=0&amp;dol_use_jmobile=0">
+<!-- Includes JS for JQuery -->
+<script nonce="6b6ea58f" src="/public/includes/jquery/js/jquery.min.js?layout=classic&amp;version=24.0.2"></script>
+<script nonce="6b6ea58f" src="/public/includes/jquery/js/jquery-ui.min.js?layout=classic&amp;version=24.0.2"></script>
+<script nonce="6b6ea58f" src="/public/includes/jquery/plugins/jnotify/jquery.jnotify.min.js?layout=classic&amp;version=24.0.2"></script>
+<script nonce="6b6ea58f" src="/public/includes/jquery/plugins/select2/dist/js/select2.full.min.js?layout=classic&amp;version=24.0.2"></script>
+<script nonce="6b6ea58f" src="/public/includes/jquery/plugins/multiselect/jquery.multi-select.js?layout=classic&amp;version=24.0.2"></script>
+<!-- Includes JS of Dolibarr -->
+<script nonce="6b6ea58f" src="/core/js/lib_head.js.php?lang=en_US&amp;layout=classic&amp;version=24.0.2"></script>
+<!-- Includes JS added by page -->
+<script nonce="6b6ea58f" src="/core/js/dst.js?lang=en_US"></script>
+</head>
+
+<!-- BEGIN PHP TEMPLATE LOGIN.TPL.PHP -->
+	<body class="body bodylogin">
+	
+<script>
+$(document).ready(function () {
+	/* Set focus on correct field */
+	$('#password').focus(); 		// Warning to use this only on visible element
+});
+</script>
+
+<div class="login_center center" style="background-size: cover; background-position: center center; background-attachment: fixed; background-repeat: no-repeat; background: linear-gradient(4deg, var(--colorbackbody) 52%, rgb(0,0,0) 52.1%);">
+<div class="login_vertical_align">
+
+
+<form id="login" name="login" method="post" action="/index.php?urlfrom=%2Fpublic%2Fdemo%2Findex.php&amp;disablemodules=adherent,barcode,bom,cashdesk,don,expedition,externalsite,ftp,incoterm,mailmanspip,margin,mrp,prelevement,product,productbatch,stock,takepos&amp;mainmenu=home">
+
+<input type="hidden" name="token" value="2dc25ea14a5d087bbdee67693c2d435efb69181e729ae05409b052ec7bb2e684">
+<input type="hidden" name="actionlogin" id="actionlogin" value="login">
+<input type="hidden" name="loginfunction" id="loginfunction" value="loginfunction">
+<input type="hidden" name="backtopage" value="">
+<!-- Add fields to store and send local user information. This fields are filled by the core/js/dst.js -->
+<input type="hidden" name="tz" id="tz" value="0">
+<input type="hidden" name="tz_string" id="tz_string" value="UTC">
+<input type="hidden" name="dst_observed" id="dst_observed" value="0">
+<input type="hidden" name="dst_first" id="dst_first" value="">
+<input type="hidden" name="dst_second" id="dst_second" value="">
+<input type="hidden" name="screenwidth" id="screenwidth" value="1366">
+<input type="hidden" name="screenheight" id="screenheight" value="757">
+<input type="hidden" name="dol_hide_topmenu" id="dol_hide_topmenu" value="0">
+<input type="hidden" name="dol_hide_leftmenu" id="dol_hide_leftmenu" value="0">
+<input type="hidden" name="dol_optimize_smallscreen" id="dol_optimize_smallscreen" value="0">
+<input type="hidden" name="dol_no_mouse_hover" id="dol_no_mouse_hover" value="0">
+<input type="hidden" name="dol_use_jmobile" id="dol_use_jmobile" value="0">
+
+
+
+<!-- Title with version -->
+<div class="login_table_title center" tabindex="-1" title="Dolibarr 24.0.2">
+<a class="login_table_title" tabindex="-1" href="https://www.dolibarr.org" target="_blank" rel="noopener noreferrer external">Dolibarr 24.0.2</a></div>
+
+
+
+<div class="login_table">
+
+<div id="login_line1">
+
+<div id="login_left">
+<img alt="" src="/viewimage.php?cache=1&amp;modulepart=mycompany&amp;file=logos%2Fthumbs%2Fmybigcompany_small.png" id="img_logo">
+</div>
+
+<br>
+
+<div id="login_right">
+
+<div class="tagtable left centpercent" title="Enter login details">
+
+<!-- Login -->
+<div class="trinputlogin">
+<div class="tagtd nowraponall center valignmiddle tdinputlogin">
+	<!-- <span class="span-icon-user">-->
+<span class="fa fa-user"></span>
+<input type="text" id="username" maxlength="255" placeholder="Login" name="username" class="flat input-icon-user minwidth150 input-nobottom" value="demo" tabindex="1" autofocus="autofocus" autocapitalize="off" autocomplete="on" spellcheck="false">
+</div>
+</div>
+
+<!-- Password -->
+<div class="trinputlogin">
+<div class="tagtd nowraponall center valignmiddle tdinputlogin" id="tdpasswordlogin">
+	<!--<span class="span-icon-password">-->
+<span class="fa fa-key"></span>
+<input type="password" id="password" maxlength="128" placeholder="Password" name="password" class="flat input-icon-password minwidth150 input-nobottom" value="Demodemodemo123-" tabindex="2" autocomplete="off">
+	<!-- code to manage the eye hide/show -->
+<span id="togglepassword" tabindex="-1"><span class="fa fa-eye"></span></span>
+<script nonce="6b6ea58f">
+	$(document).ready(function () {
+		$('#togglepassword').on('click', function (e) {
+			e.preventDefault();
+			if (event.detail === 0) return false; // Ignore keyboard "clicks"
+			console.log("We click on togglepassword");
+			const $passwordInput = $('#password');
+
+			if ($passwordInput.is('[type=password]')) {
+				$passwordInput.attr('type', 'text');
+				jQuery('#togglepassword .fa-eye').attr('class', 'fa fa-eye-slash');
+			} else {
+				$passwordInput.attr('type', 'password');
+				jQuery('#togglepassword .fa-eye-slash').attr('class', 'fa fa-eye');
+			}
+
+			return false; // This prevents the click from reloading the page
+		});
+	});
+</script></div></div>
+
+
+
+</div>
+
+</div> <!-- end div login_right -->
+
+</div> <!-- end div login_line1 -->
+
+
+<div id="login_line2" style="clear: both">
+
+
+<!-- Button Connection -->
+<br>
+<div id="login-submit-wrapper">
+<input type="submit" class="butAction butActionLogin noborderfocus" value="&nbsp; Login &nbsp;" tabindex="5">
+</div>
+
+
+<br><div class="center" style="margin-top: 5px;"><a class="alogin aloginpasswordforgotten" href="/user/passwordforgotten.php">Password forgotten?</a></div>
+</div> <!-- end login line 2 -->
+
+</div> <!-- end login table -->
+
+
+</form>
+
+
+<script nonce="6b6ea58f">
+				$(document).ready(function() {
+					/* jnotify(message, preset of message type, keepmessage) */
+					$.jnotify("Bad value for login or password", "error", true,{ remove: function (){} } );
+				});
+			</script><script>
+			$(document).ready(function() {
+				$(".jnotify-container").addClass("jnotify-container-login");
+			});
+		</script>
+	<div class="center login_main_home paddingtopbottom " style="max-width: 70%">
+	<span style="font-size:11px">Login: <strong>demo / demo</strong><br>
+<br>
+Note that a lot of features/modules are disabled in this demonstration.</span>	</div><br>
+	
+<!-- authentication mode = dolibarr -->
+<!-- cookie name used for this session = DOLSESSID_3f8d8b7d6b0ca5a85a3c509f4a9da512486b3983 -->
+<!-- urlfrom in this session = /public/demo/index.php -->
+
+<!-- Common footer is not used for login page, this is same than footer but inside login tpl -->
+
+
+
+</div>
+</div><!-- end of center -->
+
+
+
+
+
+<div class="jnotify-container jnotify-container-login"><div class="jnotify-notification jnotify-notification-error"><div class="jnotify-background"></div><a class="jnotify-close">×</a><div class="jnotify-message"><div>Bad value for login or password</div></div></div></div></body></html>
