@@ -1,0 +1,11 @@
+{
+  "test": "rejectedLoginMessage",
+  "class": "pl.kurs.qa.dolibarr.triage.TriageDemoTest",
+  "startedAt": "2026-10-26T23:51:28.891Z",
+  "durationMs": 3363,
+  "url": "https:\u002f\u002fdemo.dolibarr.org\u002findex.php?urlfrom=%2Fpublic%2Fdemo%2Findex.php\u0026disablemodules=adherent,barcode,bom,cashdesk,don,expedition,externalsite,ftp,incoterm,mailmanspip,margin,mrp,prelevement,product,productbatch,stock,takepos\u0026mainmenu=home",
+  "title": "Login @ 24.0.2",
+  "exceptionClass": "java.lang.AssertionError",
+  "message": "expected [Nieprawidłowy login lub hasło] but found [Bad value for login or password]",
+  "firstAppStackFrame": "pl.kurs.qa.dolibarr.triage.TriageDemoTest.rejectedLoginMessage(TriageDemoTest.java:37)"
+}

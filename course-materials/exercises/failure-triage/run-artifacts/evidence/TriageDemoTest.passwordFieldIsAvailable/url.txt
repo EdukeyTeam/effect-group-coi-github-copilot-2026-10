@@ -1,0 +1,1 @@
+https://demo.dolibarr.org/index.php?urlfrom=%2Fpublic%2Fdemo%2Findex.php&disablemodules=adherent,barcode,bom,cashdesk,don,expedition,externalsite,ftp,incoterm,mailmanspip,margin,mrp,prelevement,product,productbatch,stock,takepos

@@ -1,6 +1,6 @@
 # System 1 models (Jev) and JevBench
 
-> Moved from [Course Notes - AI in Programming](../Course%20Notes%20-%20AI%20in%20Programming.md) on 2026-10-02 to keep the notes short. Facts verified 2026-10-01; dates and sources are on each item.
+> Moved from [Course INDEX - AI in Programming](../Course%20INDEX%20-%20AI%20in%20Programming.md) on 2026-10-02 to keep the notes short. Facts verified 2026-10-01; dates and sources are on each item.
 
 - **System 1 models (Jev)** - new model class BETWEEN big LLMs and classic ML classifiers (also called "decision models", from Kahneman's System 1 vs System 2):
   - **TypeSafe** (founder Diogo Almeida, ex-OpenAI) launched **Jev** 15.09.2026, the first "System One" model

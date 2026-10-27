@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="TestSuite" time="27.903" tests="4" errors="0" skipped="0" failures="4" flakes="0">
+  <properties>
+    <property name="surefire.suiteXmlFiles" value="testng-triage.xml"/>
+    <property name="java.specification.version" value="21"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="~/DEV/Courses/EffectGroup/effect-group-coi-github-copilot-2026-10/course-materials/exercises/black-box-web/dolibarr-selenium/target/test-classes:~/DEV/Courses/EffectGroup/effect-group-coi-github-copilot-2026-10/course-materials/exercises/black-box-web/dolibarr-selenium/target/classes:~/.m2/repository/org/seleniumhq/selenium/selenium-java/4.51.0/selenium-java-4.51.0.jar:~/.m2/repository/org/seleniumhq/selenium/selenium-api/4.51.0/selenium-api-4.51.0.jar:~/.m2/repository/org/jspecify/jspecify/1.0.1/jspecify-1.0.1.jar:~/.m2/repository/org/seleniumhq/selenium/selenium-chrome-driver/4.51.0/selenium-chrome-driver-4.51.0.jar:~/.m2/repository/com/google/auto/service/auto-service-annotations/1.1.1/auto-service-annotations-1.1.1.jar:~/.m2/repository/org/seleniumhq/selenium/selenium-chromium-driver/4.51.0/selenium-chromium-driver-4.51.0.jar:~/.m2/repository/org/seleniumhq/selenium/selenium-json/4.51.0/selenium-json-4.51.0.jar:~/.m2/repository/org/seleniumhq/selenium/selenium-manager/4.51.0/selenium-manager-4.51.0.jar:~/.m2/repository/org/seleniumhq/selenium/selenium-devtools-latest/4.51.0/selenium-devtools-latest-4.51.0.jar:~/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v153/4.51.0/selenium-devtools-v153-4.51.0.jar:~/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v154/4.51.0/selenium-devtools-v154-4.51.0.jar:~/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v155/4.51.0/selenium-devtools-v155-4.51.0.jar:~/.m2/repository/org/seleniumhq/selenium/selenium-edge-driver/4.51.0/selenium-edge-driver-4.51.0.jar:~/.m2/repository/org/seleniumhq/selenium/selenium-firefox-driver/4.51.0/selenium-firefox-driver-4.51.0.jar:~/.m2/repository/org/jetbrains/annotations/26.1.0/annotations-26.1.0.jar:~/.m2/repository/org/seleniumhq/selenium/selenium-http/4.51.0/selenium-http-4.51.0.jar:~/.m2/repository/org/seleniumhq/selenium/selenium-ie-driver/4.51.0/selenium-ie-driver-4.51.0.jar:~/.m2/repository/org/seleniumhq/selenium/selenium-remote-driver/4.51.0/selenium-remote-driver-4.51.0.jar:~/.m2/repository/com/google/guava/guava/33.7.2-jre/guava-33.7.2-jre.jar:~/.m2/repository/com/google/guava/failureaccess/1.0.3/failureaccess-1.0.3.jar:~/.m2/repository/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:~/.m2/repository/com/google/errorprone/error_prone_annotations/2.50.0/error_prone_annotations-2.50.0.jar:~/.m2/repository/com/google/j2objc/j2objc-annotations/3.1/j2objc-annotations-3.1.jar:~/.m2/repository/io/opentelemetry/opentelemetry-api/1.66.0/opentelemetry-api-1.66.0.jar:~/.m2/repository/io/opentelemetry/opentelemetry-context/1.66.0/opentelemetry-context-1.66.0.jar:~/.m2/repository/io/opentelemetry/opentelemetry-common/1.66.0/opentelemetry-common-1.66.0.jar:~/.m2/repository/io/opentelemetry/opentelemetry-exporter-logging/1.66.0/opentelemetry-exporter-logging-1.66.0.jar:~/.m2/repository/io/opentelemetry/opentelemetry-sdk-common/1.66.0/opentelemetry-sdk-common-1.66.0.jar:~/.m2/repository/io/opentelemetry/opentelemetry-sdk-extension-autoconfigure-spi/1.66.0/opentelemetry-sdk-extension-autoconfigure-spi-1.66.0.jar:~/.m2/repository/io/opentelemetry/opentelemetry-sdk-extension-autoconfigure/1.66.0/opentelemetry-sdk-extension-autoconfigure-1.66.0.jar:~/.m2/repository/io/opentelemetry/opentelemetry-sdk-trace/1.66.0/opentelemetry-sdk-trace-1.66.0.jar:~/.m2/repository/io/opentelemetry/opentelemetry-sdk/1.66.0/opentelemetry-sdk-1.66.0.jar:~/.m2/repository/io/opentelemetry/opentelemetry-sdk-metrics/1.66.0/opentelemetry-sdk-metrics-1.66.0.jar:~/.m2/repository/io/opentelemetry/opentelemetry-sdk-logs/1.66.0/opentelemetry-sdk-logs-1.66.0.jar:~/.m2/repository/net/bytebuddy/byte-buddy/1.18.14/byte-buddy-1.18.14.jar:~/.m2/repository/org/seleniumhq/selenium/selenium-os/4.51.0/selenium-os-4.51.0.jar:~/.m2/repository/org/seleniumhq/selenium/selenium-safari-driver/4.51.0/selenium-safari-driver-4.51.0.jar:~/.m2/repository/org/seleniumhq/selenium/selenium-support/4.51.0/selenium-support-4.51.0.jar:~/.m2/repository/org/testng/testng/7.12.0/testng-7.12.0.jar:~/.m2/repository/org/slf4j/slf4j-api/2.0.16/slf4j-api-2.0.16.jar:~/.m2/repository/org/jcommander/jcommander/1.83/jcommander-1.83.jar:~/.m2/repository/org/webjars/jquery/3.7.1/jquery-3.7.1.jar:"/>
+    <property name="java.vm.vendor" value="Eclipse Adoptium"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="https://adoptium.net/"/>
+    <property name="user.timezone" value="Etc/UTC"/>
+    <property name="os.name" value="Linux"/>
+    <property name="java.vm.specification.version" value="21"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.boot.library.path" value="~/.local/opt/jdk-21.0.13+9/lib"/>
+    <property name="sun.java.command" value="~/DEV/Courses/EffectGroup/effect-group-coi-github-copilot-2026-10/course-materials/exercises/black-box-web/dolibarr-selenium/target/surefire/surefirebooter-20261026235105813_3.jar ~/DEV/Courses/EffectGroup/effect-group-coi-github-copilot-2026-10/course-materials/exercises/black-box-web/dolibarr-selenium/target/surefire 2026-10-26T23-51-05_728-jvmRun1 surefire-20261026235105813_1tmp surefire_0-20261026235105813_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="~/DEV/Courses/EffectGroup/effect-group-coi-github-copilot-2026-10/course-materials/exercises/black-box-web/dolibarr-selenium/target/test-classes:~/DEV/Courses/EffectGroup/effect-group-coi-github-copilot-2026-10/course-materials/exercises/black-box-web/dolibarr-selenium/target/classes:~/.m2/repository/org/seleniumhq/selenium/selenium-java/4.51.0/selenium-java-4.51.0.jar:~/.m2/repository/org/seleniumhq/selenium/selenium-api/4.51.0/selenium-api-4.51.0.jar:~/.m2/repository/org/jspecify/jspecify/1.0.1/jspecify-1.0.1.jar:~/.m2/repository/org/seleniumhq/selenium/selenium-chrome-driver/4.51.0/selenium-chrome-driver-4.51.0.jar:~/.m2/repository/com/google/auto/service/auto-service-annotations/1.1.1/auto-service-annotations-1.1.1.jar:~/.m2/repository/org/seleniumhq/selenium/selenium-chromium-driver/4.51.0/selenium-chromium-driver-4.51.0.jar:~/.m2/repository/org/seleniumhq/selenium/selenium-json/4.51.0/selenium-json-4.51.0.jar:~/.m2/repository/org/seleniumhq/selenium/selenium-manager/4.51.0/selenium-manager-4.51.0.jar:~/.m2/repository/org/seleniumhq/selenium/selenium-devtools-latest/4.51.0/selenium-devtools-latest-4.51.0.jar:~/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v153/4.51.0/selenium-devtools-v153-4.51.0.jar:~/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v154/4.51.0/selenium-devtools-v154-4.51.0.jar:~/.m2/repository/org/seleniumhq/selenium/selenium-devtools-v155/4.51.0/selenium-devtools-v155-4.51.0.jar:~/.m2/repository/org/seleniumhq/selenium/selenium-edge-driver/4.51.0/selenium-edge-driver-4.51.0.jar:~/.m2/repository/org/seleniumhq/selenium/selenium-firefox-driver/4.51.0/selenium-firefox-driver-4.51.0.jar:~/.m2/repository/org/jetbrains/annotations/26.1.0/annotations-26.1.0.jar:~/.m2/repository/org/seleniumhq/selenium/selenium-http/4.51.0/selenium-http-4.51.0.jar:~/.m2/repository/org/seleniumhq/selenium/selenium-ie-driver/4.51.0/selenium-ie-driver-4.51.0.jar:~/.m2/repository/org/seleniumhq/selenium/selenium-remote-driver/4.51.0/selenium-remote-driver-4.51.0.jar:~/.m2/repository/com/google/guava/guava/33.7.2-jre/guava-33.7.2-jre.jar:~/.m2/repository/com/google/guava/failureaccess/1.0.3/failureaccess-1.0.3.jar:~/.m2/repository/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:~/.m2/repository/com/google/errorprone/error_prone_annotations/2.50.0/error_prone_annotations-2.50.0.jar:~/.m2/repository/com/google/j2objc/j2objc-annotations/3.1/j2objc-annotations-3.1.jar:~/.m2/repository/io/opentelemetry/opentelemetry-api/1.66.0/opentelemetry-api-1.66.0.jar:~/.m2/repository/io/opentelemetry/opentelemetry-context/1.66.0/opentelemetry-context-1.66.0.jar:~/.m2/repository/io/opentelemetry/opentelemetry-common/1.66.0/opentelemetry-common-1.66.0.jar:~/.m2/repository/io/opentelemetry/opentelemetry-exporter-logging/1.66.0/opentelemetry-exporter-logging-1.66.0.jar:~/.m2/repository/io/opentelemetry/opentelemetry-sdk-common/1.66.0/opentelemetry-sdk-common-1.66.0.jar:~/.m2/repository/io/opentelemetry/opentelemetry-sdk-extension-autoconfigure-spi/1.66.0/opentelemetry-sdk-extension-autoconfigure-spi-1.66.0.jar:~/.m2/repository/io/opentelemetry/opentelemetry-sdk-extension-autoconfigure/1.66.0/opentelemetry-sdk-extension-autoconfigure-1.66.0.jar:~/.m2/repository/io/opentelemetry/opentelemetry-sdk-trace/1.66.0/opentelemetry-sdk-trace-1.66.0.jar:~/.m2/repository/io/opentelemetry/opentelemetry-sdk/1.66.0/opentelemetry-sdk-1.66.0.jar:~/.m2/repository/io/opentelemetry/opentelemetry-sdk-metrics/1.66.0/opentelemetry-sdk-metrics-1.66.0.jar:~/.m2/repository/io/opentelemetry/opentelemetry-sdk-logs/1.66.0/opentelemetry-sdk-logs-1.66.0.jar:~/.m2/repository/net/bytebuddy/byte-buddy/1.18.14/byte-buddy-1.18.14.jar:~/.m2/repository/org/seleniumhq/selenium/selenium-os/4.51.0/selenium-os-4.51.0.jar:~/.m2/repository/org/seleniumhq/selenium/selenium-safari-driver/4.51.0/selenium-safari-driver-4.51.0.jar:~/.m2/repository/org/seleniumhq/selenium/selenium-support/4.51.0/selenium-support-4.51.0.jar:~/.m2/repository/org/testng/testng/7.12.0/testng-7.12.0.jar:~/.m2/repository/org/slf4j/slf4j-api/2.0.16/slf4j-api-2.0.16.jar:~/.m2/repository/org/jcommander/jcommander/1.83/jcommander-1.83.jar:~/.m2/repository/org/webjars/jquery/3.7.1/jquery-3.7.1.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="~"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2026-10-20"/>
+    <property name="java.home" value="~/.local/opt/jdk-21.0.13+9"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="~/DEV/Courses/EffectGroup/effect-group-coi-github-copilot-2026-10/course-materials/exercises/black-box-web/dolibarr-selenium"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="surefire.real.class.path" value="~/DEV/Courses/EffectGroup/effect-group-coi-github-copilot-2026-10/course-materials/exercises/black-box-web/dolibarr-selenium/target/surefire/surefirebooter-20261026235105813_3.jar"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="21.0.13+9-LTS"/>
+    <property name="user.name" value="lucas"/>
+    <property name="stdout.encoding" value="UTF-8"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="6.18.54.1-microsoft-standard-WSL2"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="java.vendor.version" value="Temurin-21.0.13+9"/>
+    <property name="localRepository" value="~/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://github.com/adoptium/adoptium-support/issues"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="java.version" value="21.0.13"/>
+    <property name="user.dir" value="~/DEV/Courses/EffectGroup/effect-group-coi-github-copilot-2026-10/course-materials/exercises/black-box-web/dolibarr-selenium"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="native.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib"/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="stderr.encoding" value="UTF-8"/>
+    <property name="java.vendor" value="Eclipse Adoptium"/>
+    <property name="java.vm.version" value="21.0.13+9-LTS"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="65.0"/>
+  </properties>
+  <testcase name="landingPageTitle" classname="pl.kurs.qa.dolibarr.triage.TriageDemoTest" time="3.29">
+    <failure message="expected [Dashboard] but found [Home - Dolibarr 24.0.2]" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: expected [Dashboard] but found [Home - Dolibarr 24.0.2]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1590)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+	at org.testng.Assert.assertEquals(Assert.java:132)
+	at org.testng.Assert.assertEquals(Assert.java:656)
+	at org.testng.Assert.assertEquals(Assert.java:666)
+	at pl.kurs.qa.dolibarr.triage.TriageDemoTest.landingPageTitle(TriageDemoTest.java:25)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:697)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:1005)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+]]></failure>
+    <system-err><![CDATA[SLF4J(W): No SLF4J providers were found.
+SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
+Oct 26, 2026 11:51:07 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 156, returning the closest version; found: 155; Please update to a Selenium version that supports CDP version 156
+]]></system-err>
+  </testcase>
+  <testcase name="passwordFieldIsAvailable" classname="pl.kurs.qa.dolibarr.triage.TriageDemoTest" time="16.503">
+    <failure message="Expected condition failed: waiting for visibility of element found by By.id: passwrd, but... org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;#passwrd&quot;}.&#10;(tried for 15 seconds with 500 milliseconds interval)&#10;Build info: version: &apos;4.51.0&apos;, revision: &apos;35c5fab 35c5fab4a58fa5878edb255eb7747b04ca51a015&apos;&#10;System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.18.54.1-microsoft-standard-WSL2&apos;, java.version: &apos;21.0.13&apos;&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 156.0.8078.47, chrome: {chromedriverVersion: 156.0.8078.47 (1d17a2e2ee14..., userDataDir: /tmp/org.chromium.Chromium....}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:45317}, goog:processID: 1614067, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:45317/devtoo..., se:cdpVersion: 156.0.8078.47, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:cmtgKey: true, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}&#10;Session ID: 7e64f97241a3e89f65b788309d562d91" type="org.openqa.selenium.TimeoutException"><![CDATA[org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for visibility of element found by By.id: passwrd, but... org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"#passwrd"}.
+(tried for 15 seconds with 500 milliseconds interval)
+Build info: version: '4.51.0', revision: '35c5fab 35c5fab4a58fa5878edb255eb7747b04ca51a015'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.18.54.1-microsoft-standard-WSL2', java.version: '21.0.13'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 156.0.8078.47, chrome: {chromedriverVersion: 156.0.8078.47 (1d17a2e2ee14..., userDataDir: /tmp/org.chromium.Chromium....}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:45317}, goog:processID: 1614067, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:45317/devtoo..., se:cdpVersion: 156.0.8078.47, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:cmtgKey: true, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 7e64f97241a3e89f65b788309d562d91
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:85)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:234)
+	at pl.kurs.qa.dolibarr.triage.TriageDemoTest$LoginForm.enterPassword(TriageDemoTest.java:52)
+	at pl.kurs.qa.dolibarr.triage.TriageDemoTest.passwordFieldIsAvailable(TriageDemoTest.java:18)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:697)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:1005)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+]]></failure>
+    <system-err><![CDATA[Oct 26, 2026 11:51:11 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 156, returning the closest version; found: 155; Please update to a Selenium version that supports CDP version 156
+]]></system-err>
+  </testcase>
+  <testcase name="rejectedLoginMessage" classname="pl.kurs.qa.dolibarr.triage.TriageDemoTest" time="3.589">
+    <failure message="expected [Nieprawidłowy login lub hasło] but found [Bad value for login or password]" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: expected [Nieprawidłowy login lub hasło] but found [Bad value for login or password]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1590)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+	at org.testng.Assert.assertEquals(Assert.java:132)
+	at org.testng.Assert.assertEquals(Assert.java:656)
+	at org.testng.Assert.assertEquals(Assert.java:666)
+	at pl.kurs.qa.dolibarr.triage.TriageDemoTest.rejectedLoginMessage(TriageDemoTest.java:37)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:697)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:1005)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+]]></failure>
+    <system-err><![CDATA[Oct 26, 2026 11:51:28 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 156, returning the closest version; found: 155; Please update to a Selenium version that supports CDP version 156
+]]></system-err>
+  </testcase>
+  <testcase name="stagingLoginPage" classname="pl.kurs.qa.dolibarr.triage.TriageDemoTest" time="0.615">
+    <failure message="unknown error: net::ERR_NAME_NOT_RESOLVED&#10;  (Session info: chrome=156.0.8078.47)&#10;Build info: version: &apos;4.51.0&apos;, revision: &apos;35c5fab 35c5fab4a58fa5878edb255eb7747b04ca51a015&apos;&#10;System info: os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.18.54.1-microsoft-standard-WSL2&apos;, java.version: &apos;21.0.13&apos;&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [ab84c108f49f18541dd268490141a5b3, get {url=https://dolibarr-staging.invalid}]&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 156.0.8078.47, chrome: {chromedriverVersion: 156.0.8078.47 (1d17a2e2ee14..., userDataDir: /tmp/org.chromium.Chromium....}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:45231}, goog:processID: 1614911, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:45231/devtoo..., se:cdpVersion: 156.0.8078.47, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:cmtgKey: true, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}&#10;Session ID: ab84c108f49f18541dd268490141a5b3" type="org.openqa.selenium.WebDriverException"><![CDATA[org.openqa.selenium.WebDriverException: 
+unknown error: net::ERR_NAME_NOT_RESOLVED
+  (Session info: chrome=156.0.8078.47)
+Build info: version: '4.51.0', revision: '35c5fab 35c5fab4a58fa5878edb255eb7747b04ca51a015'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.18.54.1-microsoft-standard-WSL2', java.version: '21.0.13'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [ab84c108f49f18541dd268490141a5b3, get {url=https://dolibarr-staging.invalid}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 156.0.8078.47, chrome: {chromedriverVersion: 156.0.8078.47 (1d17a2e2ee14..., userDataDir: /tmp/org.chromium.Chromium....}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:45231}, goog:processID: 1614911, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:45231/devtoo..., se:cdpVersion: 156.0.8078.47, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:cmtgKey: true, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: ab84c108f49f18541dd268490141a5b3
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:169)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:143)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:253)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:217)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:689)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:386)
+	at pl.kurs.qa.dolibarr.triage.TriageDemoTest.stagingLoginPage(TriageDemoTest.java:30)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:697)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:1005)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+]]></failure>
+    <system-err><![CDATA[Oct 26, 2026 11:51:33 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 156, returning the closest version; found: 155; Please update to a Selenium version that supports CDP version 156
+]]></system-err>
+  </testcase>
+</testsuite>
