@@ -48,6 +48,14 @@ TC-WEB-05 pokazuje regułę biznesową, której nie znajdziesz w dokumentacji: d
 
 Wymień się testem z sąsiadem albo daj go drugiej sesji Copilota z promptem **BB-WEB-03**. Recenzent sprawdza lokatory, synchronizację, wyrocznię, dane i dowody. Decyzję o zmianach podejmuje autor testu.
 
+## Ćwiczenie 4: developerzy wydają nową wersję (15 min)
+
+Tak to wygląda w praktyce: zespół developerski wdraża nową wersję na środowisko testowe i przekazuje listę zmian. Kodu nie dostajesz. Dostajesz release notes i musisz zdecydować, co przetestować i co dopisać do regresji.
+
+1. Otwórz prawdziwe [release notes Dolibarr](https://github.com/Dolibarr/dolibarr/blob/develop/ChangeLog), sekcję "ChangeLog for 24.0.2 compared to 24.0.1" (wersja z demo).
+2. Użyj promptu **BB-WEB-04**: Copilot wybiera zmiany dotyczące not kosztowych i płatności, a Ty decydujesz o zakresie testów.
+3. Wynik: 3-5 nowych przypadków w formacie z [PRZYPADKI-TESTOWE.md](PRZYPADKI-TESTOWE.md), oznaczenie, które automatyzujesz w GUI, które sprawdzasz ręcznie, a które wymagają testu API.
+
 ## Pokaz prowadzącego: agent w przeglądarce
 
 Agent z Playwright MCP sam otwiera stronę, czyta drzewo dostępności i klika jak tester manualny. Na tym samym demo pokażemy test eksploracyjny noty kosztowej z raportem znalezisk oraz porównanie z kodem Selenium. Playwright w tym pokazie służy agentowi do eksploracji, a Wasze testy regresji zostają w Selenium.
@@ -101,4 +109,21 @@ Sprawdź:
 - zgodność z konwencją projektu (Page Object, konfiguracja, nazwy).
 
 Wynik: tabela (problem, plik:linia, ryzyko, propozycja) posortowana od najważniejszego oraz jedno zdanie werdyktu: gotowy do repozytorium czy nie.
+```
+
+## Prompt BB-WEB-04
+
+```text
+Developerzy wdrożyli na środowisko testowe nową wersję aplikacji. Nie mam kodu ani dokumentacji technicznej, tylko release notes (wklejam poniżej) i istniejące przypadki testowe (PRZYPADKI-TESTOWE.md).
+
+Release notes:
+<wklej sekcję z listą zmian>
+
+1. Wybierz zmiany dotyczące mojego obszaru: noty kosztowe, płatności, faktury. Dla każdej napisz jednym zdaniem, co zmienia się dla użytkownika. Jeśli z opisu nie da się tego ustalić, napisz, o co zapytać developera.
+2. Oceń ryzyko regresji (wysokie, średnie, niskie) z uzasadnieniem.
+3. Zaproponuj 3-5 nowych lub zmienionych przypadków testowych w formacie z PRZYPADKI-TESTOWE.md.
+4. Dla każdego przypadku wskaż sposób sprawdzenia: automat GUI (Selenium), test API, test ręczny. Uzasadnij krótko.
+5. Wskaż istniejące testy automatyczne, które warto uruchomić jako regresję.
+
+Nie zgaduj zachowania, którego release notes nie opisują. Oddziel fakty z release notes od własnych hipotez.
 ```
