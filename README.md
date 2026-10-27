@@ -11,7 +11,7 @@ Pracujemy z GitHub Copilot w IntelliJ IDEA i Copilot CLI, a w drugim dniu także
 1. [Web: Dolibarr i Selenium + TestNG](course-materials/exercises/black-box-web/README.md). Prawdziwy system finansowy (noty kosztowe, faktury), [przypadki testowe](course-materials/exercises/black-box-web/PRZYPADKI-TESTOWE.md) i [projekt startowy](course-materials/exercises/black-box-web/dolibarr-selenium/).
 2. [Android: Appium bez kodu aplikacji](course-materials/exercises/black-box-android/README.md). APK, [lokatory odczytane z APK](course-materials/exercises/black-box-android/LOKATORY-Z-APK.md) i [projekt startowy](course-materials/exercises/black-box-android/mydemoapp-appium/).
 3. [Triage nieudanych testów](course-materials/exercises/failure-triage/README.md). Prawdziwe wyniki przebiegu, kategorie jak w ReportPortal, zgłoszenie do Jira.
-4. [Microsoft 365 Copilot: agent testera](course-materials/exercises/m365-copilot/README.md).
+4. [Microsoft 365 Copilot: agent testera](course-materials/exercises/m365-copilot/README.md). Gotowy agent z zajęć: [Repository Checker z dwoma skillami](course-materials/exercises/m365-copilot/repository-checker/README.md) ([ZIP](course-materials/exercises/m365-copilot/repository-checker/repository-checker.zip)).
 5. [Modele self-hosted: Mistral, OpenCode, Zed, IntelliJ](course-materials/exercises/self-hosted-models/README.md).
 
 ## Zacznij tutaj

@@ -45,6 +45,10 @@ Zasady:
 - Nigdy nie proś o hasła, tokeny ani dane osobowe.
 ```
 
+## Gotowy agent z zajęć: Repository Checker
+
+Agent z dwoma skillami, który ocenia repozytorium przed pobraniem: audyt bezpieczeństwa i doradca zastosowań. [Opis, instalacja i paczka ZIP](repository-checker/README.md).
+
 ## Zaplanowany prompt (licencja Microsoft 365 Copilot)
 
 Po zadaniu pytania najedź na prompt i wybierz "Zaplanuj ten prompt". Przykład na poranny przegląd:
